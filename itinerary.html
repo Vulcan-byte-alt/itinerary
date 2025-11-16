@@ -183,7 +183,7 @@
             background: linear-gradient(135deg, #0a1929 0%, #1a2f42 100%);
             border-radius: 20px;
             padding: 28px;
-            width: 720px;
+            width: 1100px;
             max-width: calc(100vw - 80px);
             opacity: 0;
             visibility: hidden;
@@ -223,12 +223,13 @@
         @media (min-width: 769px) {
             .mega-menu {
                 /* Prevent right overflow */
-                max-width: min(800px, calc(100vw - 80px));
+                max-width: min(1100px, calc(100vw - 80px));
             }
 
             /* For items on right side, align to right edge instead */
             .nav-item-with-dropdown:last-child .mega-menu,
-            .nav-item-with-dropdown:nth-last-child(2) .mega-menu {
+            .nav-item-with-dropdown:nth-last-child(2) .mega-menu,
+            .nav-item-with-dropdown:nth-last-child(3) .mega-menu {
                 left: auto;
                 right: 0;
             }
@@ -7271,7 +7272,8 @@
                 padding: 16px 20px !important;
             }
 
-            .mega-menu div[style*="grid-template-columns: repeat(3, 1fr)"] {
+            .mega-menu div[style*="grid-template-columns: repeat(3, 1fr)"],
+            .mega-menu div[style*="grid-template-columns: repeat(5, 1fr)"] {
                 grid-template-columns: 1fr !important;
                 gap: 8px !important;
             }
@@ -7806,7 +7808,7 @@
                                 <!-- Ocean Cruise Lines (Text Only) -->
                                 <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
                                     <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Ocean Cruise Lines</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
                                         <a href="/cruise-line" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">All Cruiselines</a>
                                         <a href="/luxury-cruise/ae-expeditions" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AE Expeditions</a>
                                         <a href="/luxury-cruise/atlas-ocean-voyages" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Atlas Ocean Voyages</a>
@@ -7824,7 +7826,7 @@
                                 <!-- River Cruise Lines -->
                                 <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
                                     <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">River Cruise Lines</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
                                         <a href="/luxury-cruise/amawaterways" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AmaWaterways</a>
                                         <a href="/luxury-cruise/emerald-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Emerald Cruises</a>
                                         <a href="/luxury-cruise/scenic-tours-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Scenic Tours River Cruises</a>
@@ -7946,7 +7948,7 @@
                                 <!-- Ocean Destinations (Text Only) -->
                                 <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
                                     <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Ocean Destinations</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
                                         <a href="/luxury-africa-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Africa</a>
                                         <a href="/luxury-antarctica-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Antarctica</a>
                                         <a href="/luxury-arctic-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Arctic</a>
@@ -7980,7 +7982,7 @@
                                 <!-- River Destinations -->
                                 <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
                                     <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">River Cruises</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
                                         <a href="/luxury-danube-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Danube</a>
                                         <a href="/luxury-douro-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Douro</a>
                                         <a href="/luxury-mekong-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Mekong</a>
