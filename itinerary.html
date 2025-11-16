@@ -8164,22 +8164,22 @@
 
     <!-- Hero Section -->
     <section class="itinerary-hero" style="position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; min-height: 70vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="itinerary.png" class="itinerary-hero-bg" alt="Transatlantic Cruise" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7);">
-        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.75) 0%, rgba(10, 25, 41, 0.65) 100%);"></div>
+        <img src="itinerary.png" class="itinerary-hero-bg" alt="Transatlantic Cruise" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);">
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.35) 0%, rgba(10, 25, 41, 0.25) 100%);"></div>
 
         <div style="position: relative; z-index: 10; width: 100%; max-width: 1400px; padding: 120px 80px 100px 80px; color: white;">
             <!-- Breadcrumb Navigation -->
-            <nav style="font-family: 'Lato', sans-serif; font-size: 13px; margin-bottom: 32px; opacity: 0.9;">
-                <a href="/" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s;">Home</a>
-                <span style="margin: 0 8px; color: rgba(255, 255, 255, 0.5);">></span>
-                <a href="/cruise-offers" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s;">Cruise Offers</a>
-                <span style="margin: 0 8px; color: rgba(255, 255, 255, 0.5);">></span>
+            <nav style="font-family: 'Lato', sans-serif; font-size: 13px; margin-bottom: 32px;">
+                <a href="/" style="color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;">Home</a>
+                <span style="margin: 0 8px; color: rgba(255, 255, 255, 0.6);">></span>
+                <a href="/cruise-offers" style="color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;">Cruise Offers</a>
+                <span style="margin: 0 8px; color: rgba(255, 255, 255, 0.6);">></span>
                 <span style="color: var(--gold);">Transatlantic Voyage</span>
             </nav>
 
             <!-- Hero Title -->
             <h1 style="font-family: 'Cinzel', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; letter-spacing: 0.02em; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);">
-                15-Night Transatlantic Voyage
+                <span style="color: var(--gold);">15-Night</span> Transatlantic Voyage
             </h1>
 
             <!-- Hero Subtitle -->
@@ -8218,11 +8218,11 @@
 
     <!-- Itinerary Section with Tabs -->
     <section style="background: url('images/promo-bg.png') center/cover fixed, var(--cream); padding: 0; margin-top: -60px; border-radius: 40px 40px 0 0; position: relative; z-index: 20;">
-        <!-- Tab Navigation -->
-        <div style="background: white; border-bottom: 2px solid rgba(212, 165, 116, 0.2); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+        <!-- Tab Navigation with Glassmorphism -->
+        <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 2px solid rgba(212, 165, 116, 0.25); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;">
             <div class="max-w-7xl mx-auto px-6">
                 <div style="display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                    <button onclick="switchTab('overview')" id="tab-overview" class="itinerary-tab" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 20px 32px; border: none; background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); color: var(--gold); cursor: pointer; transition: all 0.3s ease; border-bottom: 3px solid var(--gold); white-space: nowrap;">
+                    <button onclick="switchTab('overview')" id="tab-overview" class="itinerary-tab" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 20px 32px; border: none; background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.1) 100%); color: var(--gold); cursor: pointer; transition: all 0.3s ease; border-bottom: 3px solid var(--gold); white-space: nowrap;">
                         Overview
                     </button>
                     <button onclick="switchTab('itinerary')" id="tab-itinerary" class="itinerary-tab" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 20px 32px; border: none; background: transparent; color: var(--navy); cursor: pointer; transition: all 0.3s ease; border-bottom: 3px solid transparent; white-space: nowrap;">
@@ -8899,7 +8899,7 @@
             // Activate clicked tab
             const activeTab = document.getElementById('tab-' + tabName);
             if (activeTab) {
-                activeTab.style.background = 'linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%)';
+                activeTab.style.background = 'linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.1) 100%)';
                 activeTab.style.color = 'var(--gold)';
                 activeTab.style.borderBottom = '3px solid var(--gold)';
             }
