@@ -8165,6 +8165,82 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
 
+    <!-- Promotional Messaging Section -->
+    <div id="promoMessaging" style="background: linear-gradient(135deg, rgba(10, 25, 41, 0.95) 0%, rgba(30, 58, 82, 0.95) 100%); padding: 16px 24px; position: relative; z-index: 50; border-bottom: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2); margin-top: 138px;">
+        <div class="max-w-7xl mx-auto">
+            <div id="promoGrid" style="display: grid; gap: 20px; align-items: center; justify-content: center;">
+                <!-- Promo messages will be dynamically added here -->
+                <div class="promo-message" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 16px 24px; display: flex; align-items: center; gap: 16px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);"
+                    onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'"
+                    onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.1)'">
+                    <div style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);">
+                        <i class="fas fa-bolt" style="color: white; font-size: 20px;"></i>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; letter-spacing: 0.3px;">
+                            BLACK FRIDAY - Save up to $4,000 per Suite!
+                        </div>
+                        <div style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.8); line-height: 1.5;">
+                            *Savings based on advertised prices
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promo-message" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 16px 24px; display: flex; align-items: center; gap: 16px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);"
+                    onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'"
+                    onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.1)'">
+                    <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);">
+                        <i class="fas fa-percentage" style="color: var(--navy); font-size: 20px;"></i>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; letter-spacing: 0.3px;">
+                            Up to $2,000 Air Credit + FREE Pre-Cruise Hotel
+                        </div>
+                        <div style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.8); line-height: 1.5;">
+                            *Per couple. Amount can vary without notice. T&Cs apply
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamically adjust promo grid based on number of messages
+        function adjustPromoGrid() {
+            const promoGrid = document.getElementById('promoGrid');
+            const messages = document.querySelectorAll('.promo-message');
+            const count = messages.length;
+
+            if (count === 1) {
+                promoGrid.style.gridTemplateColumns = '1fr';
+                promoGrid.style.maxWidth = '800px';
+                promoGrid.style.margin = '0 auto';
+            } else if (count === 2) {
+                promoGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                promoGrid.style.maxWidth = '1200px';
+                promoGrid.style.margin = '0 auto';
+            } else if (count === 3) {
+                promoGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                promoGrid.style.maxWidth = 'none';
+            } else if (count === 4) {
+                promoGrid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                promoGrid.style.maxWidth = 'none';
+            }
+
+            // Mobile responsiveness
+            if (window.innerWidth <= 768) {
+                promoGrid.style.gridTemplateColumns = '1fr';
+            } else if (window.innerWidth <= 1024 && count > 2) {
+                promoGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            }
+        }
+
+        // Run on load and resize
+        adjustPromoGrid();
+        window.addEventListener('resize', adjustPromoGrid);
+    </script>
+
 
     <!-- Hero Section -->
     <section class="itinerary-hero" style="position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; min-height: 70vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
@@ -8261,10 +8337,371 @@
         </div>
     </section>
 
+    <!-- Sticky Action Bar -->
+    <div id="stickyActionBar" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); border-top: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.8); z-index: 200; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 16px 24px;">
+        <div class="max-w-7xl mx-auto">
+            <div style="display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;">
+
+                <!-- Price Display -->
+                <div style="display: flex; align-items: center; gap: 16px; padding: 12px 24px; background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(212, 165, 116, 0.05) 100%); border: 1.5px solid rgba(212, 165, 116, 0.3); border-radius: 16px; box-shadow: 0 4px 16px rgba(212, 165, 116, 0.15);">
+                    <div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 600;">From</div>
+                        <div style="display: flex; align-items: baseline; gap: 6px;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1;">£4,299</span>
+                            <span style="font-family: 'Lato', sans-serif; font-size: 14px; color: #999; font-weight: 400;">pp</span>
+                        </div>
+                    </div>
+                    <button onclick="togglePricingView()" style="background: transparent; border: none; color: var(--gold); cursor: pointer; padding: 8px; transition: all 0.3s ease; border-radius: 8px;"
+                        onmouseover="this.style.background='rgba(212, 165, 116, 0.1)'"
+                        onmouseout="this.style.background='transparent'">
+                        <i class="fas fa-sliders-h" style="font-size: 16px;"></i>
+                    </button>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display: flex; gap: 12px; justify-content: flex-end;">
+
+                    <!-- Call Button -->
+                    <button onclick="window.location.href='tel:08082026105'" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(10, 25, 41, 0.3); text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(10, 25, 41, 0.4)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(10, 25, 41, 0.3)'">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Now</span>
+                    </button>
+
+                    <!-- Add to Wishlist Button -->
+                    <button onclick="addToWishlist()" style="background: rgba(212, 165, 116, 0.12); backdrop-filter: blur(20px); border: 1.5px solid rgba(212, 165, 116, 0.4); color: var(--navy); padding: 14px 24px; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.background='rgba(212, 165, 116, 0.2)'; this.style.transform='translateY(-2px)'"
+                        onmouseout="this.style.background='rgba(212, 165, 116, 0.12)'; this.style.transform='translateY(0)'">
+                        <i class="fas fa-heart"></i>
+                        <span>Wishlist</span>
+                    </button>
+
+                    <!-- Request Callback Button -->
+                    <button onclick="requestCallback()" style="background: white; border: 2px solid var(--navy); color: var(--navy); padding: 14px 24px; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.background='var(--navy)'; this.style.color='white'"
+                        onmouseout="this.style.background='white'; this.style.color='var(--navy)'">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Callback</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Pricing Modal -->
+    <div id="pricingModal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 25, 41, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 300; display: none; align-items: center; justify-content: center; padding: 24px; opacity: 0; transition: opacity 0.3s ease;">
+        <div style="background: white; border-radius: 24px; max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); position: relative;">
+
+            <!-- Close Button -->
+            <button onclick="togglePricingView()" style="position: absolute; top: 20px; right: 20px; background: rgba(10, 25, 41, 0.08); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+                onmouseover="this.style.background='rgba(10, 25, 41, 0.15)'; this.style.transform='rotate(90deg)'"
+                onmouseout="this.style.background='rgba(10, 25, 41, 0.08)'; this.style.transform='rotate(0)'">
+                <i class="fas fa-times" style="font-size: 18px; color: var(--navy);"></i>
+            </button>
+
+            <!-- Modal Content -->
+            <div style="padding: 40px;">
+                <h2 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 12px; letter-spacing: 0.01em;">
+                    Select Your Pricing
+                </h2>
+                <p style="font-family: 'Lato', sans-serif; font-size: 15px; color: #666; margin-bottom: 32px; line-height: 1.6;">
+                    Customize your cruise package to find the perfect option for your voyage
+                </p>
+
+                <!-- View Prices As Toggle -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: block;">
+                        View prices as:
+                    </label>
+                    <div style="display: inline-flex; background: rgba(10, 25, 41, 0.06); border-radius: 12px; padding: 4px; border: 1px solid rgba(10, 25, 41, 0.1);">
+                        <button id="perPersonBtn" onclick="setPriceView('perPerson')" style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; padding: 12px 32px; border: none; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Per Person
+                        </button>
+                        <button id="totalPriceBtn" onclick="setPriceView('total')" style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; padding: 12px 32px; border: none; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; background: transparent; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;">
+                            Total Price
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Select Fare -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: block;">
+                        Select Fare
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                        <button onclick="selectFare('lastminute')" class="fare-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 20px; border: 2px solid var(--gold); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.08) 100%); color: var(--navy); position: relative; text-align: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span>LAST MINUTE FARE</span>
+                                <div style="background: #dc2626; color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">!</div>
+                            </div>
+                        </button>
+                        <button onclick="selectFare('inclusive')" class="fare-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 20px; border: 2px solid rgba(10, 25, 41, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; color: var(--navy); text-align: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span>ALL-INCLUSIVE FARE</span>
+                                <div style="background: #dc2626; color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">i</div>
+                            </div>
+                        </button>
+                        <button onclick="selectFare('plus')" class="fare-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 20px; border: 2px solid rgba(10, 25, 41, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; color: var(--navy); text-align: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span>ALL-INCLUSIVE PLUS FARE</span>
+                                <div style="background: #dc2626; color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">i</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Select Package -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: block;">
+                        Select Package
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                        <button onclick="selectPackage('cruise')" id="cruiseOnlyBtn" class="package-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 24px; border: 2px solid var(--navy); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: var(--navy); color: white; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Cruise Only
+                        </button>
+                        <button onclick="selectPackage('fly')" id="flyCruiseBtn" class="package-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 24px; border: 2px solid rgba(10, 25, 41, 0.3); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;">
+                            Fly Cruise
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Select Guest -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: block;">
+                        Select Guest
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                        <button onclick="selectGuest('couple')" id="coupleBtn" class="guest-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 24px; border: 2px solid var(--navy); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: var(--navy); color: white; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Couple
+                        </button>
+                        <button onclick="selectGuest('solo')" id="soloBtn" class="guest-option" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 16px 24px; border: 2px solid rgba(10, 25, 41, 0.3); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;">
+                            Solo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Select Cabins -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: block;">
+                        Select Cabins
+                    </label>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                        <!-- Classic Veranda Suite -->
+                        <button onclick="selectCabin('classic')" class="cabin-option" style="font-family: 'Lato', sans-serif; padding: 20px 24px; border: 2px solid var(--gold); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0.05) 100%); text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px;">CLASSIC VERANDA SUITE</div>
+                                <div style="font-size: 13px; color: #666;">
+                                    <span style="text-decoration: line-through; color: #999; margin-right: 8px;">From £3752pp</span>
+                                    <span style="color: var(--gold); font-weight: 600;">SOLD OUT</span>
+                                </div>
+                            </div>
+                            <div style="font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--navy);">
+                                £3752<span style="font-size: 14px; font-weight: 400; color: #999;">pp</span>
+                            </div>
+                        </button>
+
+                        <!-- Superior Veranda Suite -->
+                        <button onclick="selectCabin('superior')" class="cabin-option" style="font-family: 'Lato', sans-serif; padding: 20px 24px; border: 2px solid rgba(10, 25, 41, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px;">SUPERIOR VERANDA SUITE</div>
+                                <div style="font-size: 13px; color: #666;">
+                                    <span style="text-decoration: line-through; color: #999; margin-right: 8px;">WAS £4159pp</span>
+                                    <span style="color: #dc2626; font-weight: 600;">From £3942pp</span>
+                                </div>
+                            </div>
+                            <div style="font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--navy);">
+                                £3942<span style="font-size: 14px; font-weight: 400; color: #999;">pp</span>
+                            </div>
+                        </button>
+
+                        <!-- Deluxe Veranda Suite -->
+                        <button onclick="selectCabin('deluxe')" class="cabin-option" style="font-family: 'Lato', sans-serif; padding: 20px 24px; border: 2px solid rgba(10, 25, 41, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px;">DELUXE VERANDA SUITE</div>
+                                <div style="font-size: 13px; color: #666;">
+                                    <span style="text-decoration: line-through; color: #999; margin-right: 8px;">WAS £4559pp</span>
+                                    <span style="color: #dc2626; font-weight: 600;">From £4322pp</span>
+                                </div>
+                            </div>
+                            <div style="font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--navy);">
+                                £4322<span style="font-size: 14px; font-weight: 400; color: #999;">pp</span>
+                            </div>
+                        </button>
+
+                        <!-- Premium Veranda Suite -->
+                        <button onclick="selectCabin('premium')" class="cabin-option" style="font-family: 'Lato', sans-serif; padding: 20px 24px; border: 2px solid rgba(10, 25, 41, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; background: white; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px;">PREMIUM VERANDA SUITE</div>
+                                <div style="font-size: 13px; color: #666;">
+                                    <span style="text-decoration: line-through; color: #999; margin-right: 8px;">WAS £4775pp</span>
+                                    <span style="color: #dc2626; font-weight: 600;">From £4512pp</span>
+                                </div>
+                            </div>
+                            <div style="font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--navy);">
+                                £4512<span style="font-size: 14px; font-weight: 400; color: #999;">pp</span>
+                            </div>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(0, 0, 0, 0.08);">
+                    <button onclick="togglePricingView()" style="width: 100%; background: white; border: 2px solid var(--navy); color: var(--navy); padding: 16px 32px; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.background='rgba(10, 25, 41, 0.05)'"
+                        onmouseout="this.style.background='white'">
+                        Close
+                    </button>
+                    <button style="width: 100%; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); border: none; padding: 16px 32px; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(212, 165, 116, 0.3); text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(212, 165, 116, 0.4)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(212, 165, 116, 0.3)'">
+                        Request Quote
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle pricing modal
+        function togglePricingView() {
+            const modal = document.getElementById('pricingModal');
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        // Price view toggle
+        function setPriceView(view) {
+            const perPersonBtn = document.getElementById('perPersonBtn');
+            const totalPriceBtn = document.getElementById('totalPriceBtn');
+
+            if (view === 'perPerson') {
+                perPersonBtn.style.background = 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)';
+                perPersonBtn.style.color = 'white';
+                totalPriceBtn.style.background = 'transparent';
+                totalPriceBtn.style.color = 'var(--navy)';
+            } else {
+                totalPriceBtn.style.background = 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)';
+                totalPriceBtn.style.color = 'white';
+                perPersonBtn.style.background = 'transparent';
+                perPersonBtn.style.color = 'var(--navy)';
+            }
+        }
+
+        // Fare selection
+        function selectFare(fare) {
+            document.querySelectorAll('.fare-option').forEach(btn => {
+                btn.style.border = '2px solid rgba(10, 25, 41, 0.2)';
+                btn.style.background = 'white';
+            });
+            event.target.closest('.fare-option').style.border = '2px solid var(--gold)';
+            event.target.closest('.fare-option').style.background = 'linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.08) 100%)';
+        }
+
+        // Package selection
+        function selectPackage(pkg) {
+            const cruiseBtn = document.getElementById('cruiseOnlyBtn');
+            const flyBtn = document.getElementById('flyCruiseBtn');
+
+            if (pkg === 'cruise') {
+                cruiseBtn.style.background = 'var(--navy)';
+                cruiseBtn.style.color = 'white';
+                cruiseBtn.style.border = '2px solid var(--navy)';
+                flyBtn.style.background = 'white';
+                flyBtn.style.color = 'var(--navy)';
+                flyBtn.style.border = '2px solid rgba(10, 25, 41, 0.3)';
+            } else {
+                flyBtn.style.background = 'var(--navy)';
+                flyBtn.style.color = 'white';
+                flyBtn.style.border = '2px solid var(--navy)';
+                cruiseBtn.style.background = 'white';
+                cruiseBtn.style.color = 'var(--navy)';
+                cruiseBtn.style.border = '2px solid rgba(10, 25, 41, 0.3)';
+            }
+        }
+
+        // Guest selection
+        function selectGuest(guest) {
+            const coupleBtn = document.getElementById('coupleBtn');
+            const soloBtn = document.getElementById('soloBtn');
+
+            if (guest === 'couple') {
+                coupleBtn.style.background = 'var(--navy)';
+                coupleBtn.style.color = 'white';
+                coupleBtn.style.border = '2px solid var(--navy)';
+                soloBtn.style.background = 'white';
+                soloBtn.style.color = 'var(--navy)';
+                soloBtn.style.border = '2px solid rgba(10, 25, 41, 0.3)';
+            } else {
+                soloBtn.style.background = 'var(--navy)';
+                soloBtn.style.color = 'white';
+                soloBtn.style.border = '2px solid var(--navy)';
+                coupleBtn.style.background = 'white';
+                coupleBtn.style.color = 'var(--navy)';
+                coupleBtn.style.border = '2px solid rgba(10, 25, 41, 0.3)';
+            }
+        }
+
+        // Cabin selection
+        function selectCabin(cabin) {
+            document.querySelectorAll('.cabin-option').forEach(btn => {
+                btn.style.border = '2px solid rgba(10, 25, 41, 0.2)';
+                btn.style.background = 'white';
+            });
+            event.target.closest('.cabin-option').style.border = '2px solid var(--gold)';
+            event.target.closest('.cabin-option').style.background = 'linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0.05) 100%)';
+        }
+
+        // Show sticky bar on scroll
+        let lastScroll = 0;
+        const stickyBar = document.getElementById('stickyActionBar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // Show when scrolled down past hero (around 600px)
+            if (currentScroll > 600) {
+                stickyBar.style.transform = 'translateY(0)';
+            } else {
+                stickyBar.style.transform = 'translateY(100%)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Wishlist function
+        function addToWishlist() {
+            // Add your wishlist logic here
+            alert('Added to wishlist! (Connect to your wishlist system)');
+        }
+
+        // Callback function
+        function requestCallback() {
+            // Add your callback request logic here
+            alert('Request callback form would open here');
+        }
+    </script>
+
     <!-- Itinerary Section with Tabs -->
     <section style="background: url('images/promo-bg.png') center/cover fixed, var(--cream); padding: 0; margin-top: 0; border-radius: 40px 40px 0 0; position: relative; z-index: 20;">
         <!-- Tab Navigation with Glassmorphism -->
-        <div style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.22); border-left: none; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.18); position: sticky; top: 0; z-index: 100; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 0 rgba(0, 0, 0, 0.08);">
+        <div style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.22); border-left: none; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.18); position: relative; z-index: 50; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 0 rgba(0, 0, 0, 0.08);">
             <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
                 <div style="display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch;">
                     <button onclick="switchTab('overview')" id="tab-overview" class="itinerary-tab" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 20px 32px; border: none; background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.1) 100%); color: var(--gold); cursor: pointer; transition: all 0.3s ease; border-bottom: 3px solid var(--gold); white-space: nowrap;">
