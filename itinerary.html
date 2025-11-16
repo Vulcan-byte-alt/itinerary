@@ -7578,17 +7578,19 @@
             }
         }
 
-        /* Itinerary Hero Section - Full Height with Header Overlay */
+        /* Itinerary Hero Section - Full Viewport Width with Cruise Details Card */
         .itinerary-hero {
             position: relative;
             height: 100vh;
             min-height: 700px;
-            width: 100%;
+            width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             margin-top: 0;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
         }
 
         .itinerary-hero-bg {
@@ -7598,7 +7600,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.6);
         }
 
         .itinerary-hero-overlay {
@@ -7608,10 +7610,894 @@
             box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
         }
 
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 60px;
+            align-items: start;
+            padding-top: 120px;
+        }
+
+        .hero-left-content {
+            color: white;
+            padding-top: 40px;
+        }
+
+        .cruise-details-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 140px;
+        }
+
+        .cruise-line-logo {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .cruise-line-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .cruise-detail-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .cruise-detail-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 28px;
+        }
+
+        .cruise-detail-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .cruise-detail-value {
+            font-family: 'Lato', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .cruise-detail-sub {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .cruise-ship-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(232, 194, 150, 0.05) 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .price-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .price-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .price-value span {
+            font-size: 20px;
+            font-weight: 400;
+            color: #999;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-cta-btn {
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero-cta-btn.primary {
+            background: var(--gold);
+            color: white;
+        }
+
+        .hero-cta-btn.primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        .hero-cta-btn.secondary {
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--gold);
+        }
+
+        .hero-cta-btn.secondary:hover {
+            background: rgba(212, 165, 116, 0.1);
+        }
+
+        .port-breakdown {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(212, 165, 116, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .port-breakdown-title {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-container {
+                grid-template-columns: 1fr 400px;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-top: 100px;
+            }
+
+            .cruise-details-card {
+                position: relative;
+                top: 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .itinerary-hero {
-                height: 80vh;
-                min-height: 600px;
+                height: auto;
+                min-height: auto;
+            }
+
+            .hero-container {
+                padding: 100px 20px 40px 20px;
+            }
+        }
+
+        /* Promotional Messaging Section */
+        .promo-messages-section {
+            background: url('images/promo-bg.png') center/cover fixed, white;
+            padding: 60px 0;
+            position: relative;
+            z-index: 15;
+            margin-top: -60px;
+        }
+
+        .promo-messages-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .promo-messages-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .promo-messages-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .promo-messages-grid.count-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .promo-messages-grid.count-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .promo-messages-grid.count-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .promo-message {
+            padding: 24px 32px;
+            border-radius: 12px;
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .promo-message.style-1 {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .promo-message.style-2 {
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a52 100%);
+            border: 2px solid var(--gold);
+        }
+
+        .promo-message i {
+            font-size: 18px;
+        }
+
+        @media (max-width: 1024px) {
+            .promo-messages-grid.count-3,
+            .promo-messages-grid.count-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .promo-messages-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .promo-messages-container {
+                padding: 0 20px;
+            }
+
+            .promo-message {
+                padding: 20px 24px;
+                font-size: 14px;
+            }
+        }
+
+        /* Sticky CTA Section */
+        .sticky-cta {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 2500;
+            padding: 20px 0;
+            display: none;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+        }
+
+        .sticky-cta-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .sticky-cta-info {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .sticky-cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .sticky-cta-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .sticky-cta-price span {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .sticky-cta-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .sticky-cta-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .sticky-cta-btn.primary {
+            background: var(--gold);
+            color: white;
+        }
+
+        .sticky-cta-btn.primary:hover {
+            background: var(--gold-light);
+        }
+
+        .sticky-cta-btn.secondary {
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--gold);
+        }
+
+        .sticky-cta-btn.secondary:hover {
+            background: rgba(212, 165, 116, 0.1);
+        }
+
+        @media (max-width: 968px) {
+            .sticky-cta-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .sticky-cta-info {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .sticky-cta-buttons {
+                width: 100%;
+            }
+
+            .sticky-cta-btn {
+                flex: 1;
+            }
+        }
+
+        /* Pricing Views Section */
+        .pricing-section {
+            background: url('images/promo-bg.png') center/cover fixed, white;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .pricing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .pricing-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0;
+            margin-bottom: 32px;
+            border: 2px solid var(--navy);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .view-toggle-btn {
+            flex: 1;
+            padding: 14px 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            background: white;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-toggle-btn.active {
+            background: var(--navy);
+            color: white;
+        }
+
+        .view-toggle-btn:hover:not(.active) {
+            background: rgba(10, 25, 41, 0.05);
+        }
+
+        .pricing-section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fare-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .fare-option {
+            padding: 16px;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .fare-option.active {
+            border-color: var(--gold);
+            background: rgba(212, 165, 116, 0.05);
+        }
+
+        .fare-option.has-badge {
+            border-color: #DC143C;
+        }
+
+        .fare-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #DC143C;
+            color: white;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .fare-option-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .package-guest-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .option-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .option-btn {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn.active {
+            border-color: var(--gold);
+            background: rgba(212, 165, 116, 0.05);
+        }
+
+        .cabin-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cabin-item {
+            padding: 20px;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cabin-item:hover {
+            border-color: var(--gold);
+        }
+
+        .cabin-item.active {
+            border-color: var(--gold);
+            background: rgba(212, 165, 116, 0.05);
+        }
+
+        .cabin-info {
+            flex: 1;
+        }
+
+        .cabin-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .cabin-features {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .cabin-pricing {
+            text-align: right;
+        }
+
+        .cabin-original-price {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        .cabin-current-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .cabin-from-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                padding: 0 20px;
+            }
+
+            .fare-options {
+                grid-template-columns: 1fr;
+            }
+
+            .package-guest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cabin-item {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .cabin-pricing {
+                text-align: center;
+            }
+        }
+
+        /* Day-by-Day Itinerary Section */
+        .itinerary-section {
+            background: url('images/promo-bg.png') center/cover fixed, white;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .itinerary-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .itinerary-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .itinerary-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .itinerary-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .days-nav {
+            display: flex;
+            overflow-x: auto;
+            gap: 8px;
+            margin-bottom: 40px;
+            padding-bottom: 12px;
+            scroll-behavior: smooth;
+        }
+
+        .days-nav::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .days-nav::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+        }
+
+        .days-nav::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .day-tab {
+            flex-shrink: 0;
+            padding: 14px 24px;
+            background: white;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .day-tab:hover {
+            border-color: var(--gold);
+            background: rgba(212, 165, 116, 0.05);
+        }
+
+        .day-tab.active {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+
+        .day-number {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .day-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .day-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .day-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: start;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .day-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .day-icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .day-info {
+            flex: 1;
+        }
+
+        .day-port {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .day-date {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .day-arrival-departure {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .day-description {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .day-highlights {
+            background: rgba(212, 165, 116, 0.05);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .day-highlights-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .day-highlights ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .day-highlights li {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #666;
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .day-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .itinerary-container {
+                padding: 0 20px;
+            }
+
+            .itinerary-title {
+                font-size: 32px;
+            }
+
+            .day-card {
+                padding: 24px;
+            }
+
+            .day-header {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .day-port {
+                font-size: 24px;
             }
         }
     </style>
@@ -8166,20 +9052,499 @@
         <img src="itinerary.png" class="itinerary-hero-bg" alt="Mediterranean Cruise">
         <div class="itinerary-hero-overlay"></div>
 
-        <div class="hero-content">
-            <div class="hero-kicker">Your Journey Awaits</div>
-            <h1 class="hero-title-luxury">
-                <div class="hero-title-line">
-                    <span>DISCOVER</span>
-                    <span>YOUR</span>
-                    <span>PERFECT</span>
+        <div class="hero-container">
+            <!-- Left Content -->
+            <div class="hero-left-content">
+                <div class="hero-kicker" style="color: var(--gold);">Your Journey Awaits</div>
+                <h1 class="hero-title-luxury" style="color: white; margin-bottom: 20px;">
+                    <div class="hero-title-line">
+                        <span>15-Night</span>
+                    </div>
+                    <div class="hero-title-line">
+                        <span class="text-gold">Transatlantic Voyage</span>
+                    </div>
+                </h1>
+                <div class="hero-divider"></div>
+                <p class="hero-tagline-luxury" style="color: rgba(255, 255, 255, 0.9); max-width: 600px;">Barcelona to Miami aboard the luxurious Regent Seven Seas Explorer</p>
+
+                <!-- Breadcrumb -->
+                <div style="margin-top: 32px; display: flex; align-items: center; gap: 8px; font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.7);">
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Home</a>
+                    <span>/</span>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Cruise Offers</a>
+                    <span>/</span>
+                    <span style="color: white;">Transatlantic Voyage</span>
                 </div>
-                <div class="hero-title-line">
-                    <span class="text-gold">VOYAGE</span>
+            </div>
+
+            <!-- Right: Cruise Details Card -->
+            <div class="cruise-details-card">
+                <!-- Cruise Line Logo -->
+                <div class="cruise-line-logo">
+                    <div class="cruise-detail-label">Cruise Line</div>
+                    <img src="https://www.oceania-cruises.co.uk/typo3conf/ext/edg_theme/Resources/Public/Oceania/Images/logo.png" alt="Oceania Cruises">
                 </div>
-            </h1>
-            <div class="hero-divider"></div>
-            <p class="hero-tagline-luxury">Explore detailed itineraries for unforgettable journeys</p>
+
+                <!-- Ship Image -->
+                <img src="images/promotion/Screenshot 2025-11-02 114820.png" alt="Ship" class="cruise-ship-image">
+
+                <!-- Ship Name -->
+                <div class="cruise-detail-item">
+                    <div class="cruise-detail-label">Ship</div>
+                    <div class="cruise-detail-value">Seven Seas Explorer</div>
+                </div>
+
+                <!-- Destination -->
+                <div class="cruise-detail-item">
+                    <div class="cruise-detail-label">Sailing Name</div>
+                    <div class="cruise-detail-value">Baltic Sea & Beyond</div>
+                </div>
+
+                <!-- Duration -->
+                <div class="cruise-detail-item">
+                    <div class="cruise-detail-label">Duration</div>
+                    <div class="cruise-detail-value">15 Nights</div>
+                </div>
+
+                <!-- Departure -->
+                <div class="cruise-detail-item">
+                    <div class="cruise-detail-label">Departure</div>
+                    <div class="cruise-detail-value">Barcelona, Spain</div>
+                    <div class="cruise-detail-sub">18 May 2026</div>
+                </div>
+
+                <!-- Arrival -->
+                <div class="cruise-detail-item">
+                    <div class="cruise-detail-label">Arrival</div>
+                    <div class="cruise-detail-value">Miami, Florida</div>
+                    <div class="cruise-detail-sub">2 June 2026</div>
+                </div>
+
+                <!-- Port Breakdown -->
+                <div class="port-breakdown">
+                    <div class="port-breakdown-title">Ports of Call</div>
+                    <div>Spain • Portugal • Madeira • Bermuda • Florida</div>
+                </div>
+
+                <!-- Price -->
+                <div class="price-section">
+                    <div class="price-label">From Price</div>
+                    <div class="price-value">£4,674<span> pp</span></div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta-buttons">
+                    <button class="hero-cta-btn primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </button>
+                    <button class="hero-cta-btn secondary">
+                        <i class="fas fa-heart"></i>
+                        Add to Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-container">
+            <div class="sticky-cta-info">
+                <div class="sticky-cta-title">15-Night Transatlantic Voyage</div>
+                <div class="sticky-cta-price">£4,674 <span>pp</span></div>
+            </div>
+            <div class="sticky-cta-buttons">
+                <button class="sticky-cta-btn primary">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Now
+                </button>
+                <button class="sticky-cta-btn secondary">
+                    <i class="fas fa-heart"></i>
+                    Add to Wishlist
+                </button>
+                <button class="sticky-cta-btn secondary">
+                    <i class="fas fa-phone"></i>
+                    Request Callback
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promotional Messages Section -->
+    <section class="promo-messages-section">
+        <div class="promo-messages-container">
+            <div class="promo-messages-grid count-2">
+                <div class="promo-message style-1">
+                    <i class="fas fa-fire"></i>
+                    <span>🔥 52% OFF CRUISE - As low as £4,999.00 Per Suite</span>
+                </div>
+                <div class="promo-message style-2">
+                    <i class="fas fa-gift"></i>
+                    <span>💎 FREE Drinks package worth €1,600+ per person + FREE Speciality Dining</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-container">
+            <h2 class="pricing-title">Choose Your Perfect Suite</h2>
+            <p class="pricing-subtitle">Select your preferred pricing view and cabin options</p>
+
+            <!-- View Toggle -->
+            <div class="view-toggle">
+                <button class="view-toggle-btn active" onclick="togglePricingView('per-person')">Per Person</button>
+                <button class="view-toggle-btn" onclick="togglePricingView('total')">Total Price</button>
+            </div>
+
+            <!-- Select Fare -->
+            <div class="pricing-section-label">Select Fare</div>
+            <div class="fare-options">
+                <div class="fare-option has-badge active">
+                    <div class="fare-badge">BEST VALUE</div>
+                    <div class="fare-option-label">LAST MINUTE FARE</div>
+                </div>
+                <div class="fare-option">
+                    <div class="fare-option-label">ALL-INCLUSIVE FARE</div>
+                </div>
+                <div class="fare-option">
+                    <div class="fare-option-label">ALL-INCLUSIVE PLUS FARE</div>
+                </div>
+            </div>
+
+            <!-- Select Package and Guest -->
+            <div class="package-guest-grid">
+                <div>
+                    <div class="pricing-section-label">Select Package</div>
+                    <div class="option-group">
+                        <button class="option-btn active">CRUISE ONLY</button>
+                        <button class="option-btn">FLY CRUISE</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="pricing-section-label">Select Guest</div>
+                    <div class="option-group">
+                        <button class="option-btn active">COUPLE</button>
+                        <button class="option-btn">SOLO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Cabins -->
+            <div class="pricing-section-label">Select Cabins</div>
+            <div class="cabin-list">
+                <div class="cabin-item active">
+                    <div class="cabin-info">
+                        <div class="cabin-name">CLASSIC VERANDA SUITE</div>
+                    </div>
+                    <div class="cabin-pricing">
+                        <div class="cabin-current-price"><span class="cabin-from-label">from </span>£3752<span style="font-size: 16px;">pp</span></div>
+                    </div>
+                </div>
+
+                <div class="cabin-item">
+                    <div class="cabin-info">
+                        <div class="cabin-name">SUPERIOR VERANDA SUITE</div>
+                    </div>
+                    <div class="cabin-pricing">
+                        <div class="cabin-original-price">WAS £4150pp</div>
+                        <div class="cabin-current-price"><span class="cabin-from-label">from </span>£3942<span style="font-size: 16px;">pp</span></div>
+                    </div>
+                </div>
+
+                <div class="cabin-item">
+                    <div class="cabin-info">
+                        <div class="cabin-name">DELUXE VERANDA SUITE</div>
+                    </div>
+                    <div class="cabin-pricing">
+                        <div class="cabin-original-price">WAS £4350pp</div>
+                        <div class="cabin-current-price"><span class="cabin-from-label">from </span>£4322<span style="font-size: 16px;">pp</span></div>
+                    </div>
+                </div>
+
+                <div class="cabin-item">
+                    <div class="cabin-info">
+                        <div class="cabin-name">PREMIUM VERANDA SUITE</div>
+                    </div>
+                    <div class="cabin-pricing">
+                        <div class="cabin-original-price">WAS £4750pp</div>
+                        <div class="cabin-current-price"><span class="cabin-from-label">from </span>£4512<span style="font-size: 16px;">pp</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day-by-Day Itinerary Section -->
+    <section class="itinerary-section">
+        <div class="itinerary-container">
+            <div class="itinerary-header">
+                <h2 class="itinerary-title">Day-by-Day Itinerary</h2>
+                <p class="itinerary-subtitle">Explore each destination on your transatlantic voyage</p>
+            </div>
+
+            <!-- Days Navigation -->
+            <div class="days-nav" id="daysNav">
+                <div class="day-tab active" data-day="1">
+                    <div class="day-number">1</div>
+                    <div class="day-label">Barcelona</div>
+                </div>
+                <div class="day-tab" data-day="2">
+                    <div class="day-number">2</div>
+                    <div class="day-label">Palma</div>
+                </div>
+                <div class="day-tab" data-day="3">
+                    <div class="day-number">3</div>
+                    <div class="day-label">At Sea</div>
+                </div>
+                <div class="day-tab" data-day="4">
+                    <div class="day-number">4</div>
+                    <div class="day-label">Funchal</div>
+                </div>
+                <div class="day-tab" data-day="5-10">
+                    <div class="day-number">5-10</div>
+                    <div class="day-label">At Sea</div>
+                </div>
+                <div class="day-tab" data-day="11">
+                    <div class="day-number">11</div>
+                    <div class="day-label">Bermuda</div>
+                </div>
+                <div class="day-tab" data-day="12-14">
+                    <div class="day-number">12-14</div>
+                    <div class="day-label">At Sea</div>
+                </div>
+                <div class="day-tab" data-day="15">
+                    <div class="day-number">15</div>
+                    <div class="day-label">Miami</div>
+                </div>
+            </div>
+
+            <!-- Day 1 Content -->
+            <div class="day-content active" data-day="1">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-anchor"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Barcelona, Spain</h3>
+                            <div class="day-date">18 May 2026</div>
+                            <div class="day-arrival-departure">Embarkation • Departs 18:00</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Begin your transatlantic journey in the vibrant capital of Catalonia. Barcelona offers stunning architecture by Gaudí, including the iconic Sagrada Familia, world-class museums, and delicious Mediterranean cuisine. Explore the Gothic Quarter's narrow streets or stroll down the famous Las Ramblas before embarking on your luxury voyage.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Port Highlights</div>
+                        <ul>
+                            <li>Sagrada Familia & Gaudí's masterpieces</li>
+                            <li>Gothic Quarter & Las Ramblas</li>
+                            <li>Park Güell panoramic views</li>
+                            <li>La Boqueria Market</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Content -->
+            <div class="day-content" data-day="2">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Palma de Mallorca, Spain</h3>
+                            <div class="day-date">19 May 2026</div>
+                            <div class="day-arrival-departure">Arrives 08:00 • Departs 18:00</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Discover the beautiful Balearic capital with its stunning cathedral, charming old town, and pristine beaches. Palma combines rich history with Mediterranean luxury, offering world-class shopping, dining, and cultural experiences.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Port Highlights</div>
+                        <ul>
+                            <li>La Seu Cathedral & Almudaina Palace</li>
+                            <li>Old Town cobblestone streets</li>
+                            <li>Bellver Castle with panoramic views</li>
+                            <li>Beautiful Mediterranean beaches</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Content -->
+            <div class="day-content" data-day="3">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">At Sea</h3>
+                            <div class="day-date">20 May 2026</div>
+                            <div class="day-arrival-departure">Cruising</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Enjoy a full day at sea aboard the luxurious Regent Seven Seas Explorer. Take advantage of world-class amenities including the spa, fitness center, gourmet restaurants, and enriching lectures. Relax by the pool or participate in onboard activities.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Onboard Activities</div>
+                        <ul>
+                            <li>Canyon Ranch SpaClub treatments</li>
+                            <li>Culinary classes & wine tastings</li>
+                            <li>Enrichment lectures & entertainment</li>
+                            <li>Pool & deck relaxation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 Content -->
+            <div class="day-content" data-day="4">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Funchal, Madeira</h3>
+                            <div class="day-date">21 May 2026</div>
+                            <div class="day-arrival-departure">Arrives 08:00 • Departs 18:00</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Visit the 'Pearl of the Atlantic' with its subtropical gardens, volcanic landscapes, and world-famous Madeira wine. Funchal offers stunning mountain views, traditional markets, and beautiful botanical gardens.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Port Highlights</div>
+                        <ul>
+                            <li>Monte Palace Tropical Garden</li>
+                            <li>Madeira wine tasting experiences</li>
+                            <li>Cable car to Monte village</li>
+                            <li>Mercado dos Lavradores market</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Days 5-10 Content -->
+            <div class="day-content" data-day="5-10">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Atlantic Crossing</h3>
+                            <div class="day-date">22-27 May 2026</div>
+                            <div class="day-arrival-departure">Cruising the Atlantic Ocean</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Experience the magic of a true transatlantic crossing. Six days of pure relaxation and luxury as you sail across the Atlantic Ocean. Enjoy the ship's exceptional amenities, attend enriching lectures, indulge in spa treatments, and savor gourmet cuisine while crossing 3,000 miles of open ocean.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Onboard Experiences</div>
+                        <ul>
+                            <li>Multiple gourmet dining venues</li>
+                            <li>Live entertainment & shows</li>
+                            <li>Destination lectures & workshops</li>
+                            <li>Full spa & wellness facilities</li>
+                            <li>Stargazing from the deck</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 11 Content -->
+            <div class="day-content" data-day="11">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Hamilton, Bermuda</h3>
+                            <div class="day-date">28 May 2026</div>
+                            <div class="day-arrival-departure">Arrives 08:00 • Departs 18:00</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Explore the pink sand beaches and British colonial charm of Bermuda. Hamilton offers pastel-colored buildings, crystal-clear waters, and a unique blend of British and island culture. Discover historic forts, world-class golf courses, and pristine beaches.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Port Highlights</div>
+                        <ul>
+                            <li>Famous pink sand beaches</li>
+                            <li>Crystal Caves & fantasy caves</li>
+                            <li>Historic Royal Naval Dockyard</li>
+                            <li>Horseshoe Bay Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Days 12-14 Content -->
+            <div class="day-content" data-day="12-14">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">At Sea</h3>
+                            <div class="day-date">29-31 May 2026</div>
+                            <div class="day-arrival-departure">Cruising to Florida</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Enjoy three final days of luxury cruising as you make your way toward the Florida coast. These days are perfect for reflecting on your journey, enjoying the ship's amenities one last time, and preparing for your arrival in Miami.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Final Days Onboard</div>
+                        <ul>
+                            <li>Farewell gala dinners</li>
+                            <li>Final spa treatments & relaxation</li>
+                            <li>Shopping in onboard boutiques</li>
+                            <li>Entertainment & shows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 15 Content -->
+            <div class="day-content" data-day="15">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-icon">
+                            <i class="fas fa-flag-checkered"></i>
+                        </div>
+                        <div class="day-info">
+                            <h3 class="day-port">Miami, Florida</h3>
+                            <div class="day-date">1 June 2026</div>
+                            <div class="day-arrival-departure">Arrives 08:00 • Disembarkation</div>
+                        </div>
+                    </div>
+                    <p class="day-description">
+                        Conclude your magnificent transatlantic voyage in the vibrant city of Miami. Known for its Art Deco architecture, beautiful beaches, and diverse culture, Miami offers the perfect ending to your journey. Consider extending your stay to explore South Beach, the Wynwood Arts District, or the nearby Everglades.
+                    </p>
+                    <div class="day-highlights">
+                        <div class="day-highlights-title">Miami Highlights</div>
+                        <ul>
+                            <li>South Beach & Art Deco District</li>
+                            <li>Wynwood Walls street art</li>
+                            <li>Vizcaya Museum & Gardens</li>
+                            <li>Little Havana cultural experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -9267,6 +10632,85 @@
 
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
+
+        // Sticky CTA functionality
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.itinerary-hero');
+
+        window.addEventListener('scroll', function() {
+            if (heroSection && stickyCta) {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+                if (heroBottom < 0) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+            }
+        });
+
+        // Pricing Section Functionality
+        function togglePricingView(view) {
+            const buttons = document.querySelectorAll('.view-toggle-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if ((view === 'per-person' && btn.textContent.includes('Per Person')) ||
+                    (view === 'total' && btn.textContent.includes('Total'))) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Fare option selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const fareOptions = document.querySelectorAll('.fare-option');
+            fareOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    fareOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Package/Guest option selection
+            const optionBtns = document.querySelectorAll('.option-btn');
+            optionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const siblings = this.parentElement.querySelectorAll('.option-btn');
+                    siblings.forEach(sib => sib.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Cabin selection
+            const cabinItems = document.querySelectorAll('.cabin-item');
+            cabinItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    cabinItems.forEach(cabin => cabin.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Day-by-Day Itinerary tabs
+            const dayTabs = document.querySelectorAll('.day-tab');
+            const dayContents = document.querySelectorAll('.day-content');
+
+            dayTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetDay = this.getAttribute('data-day');
+
+                    // Remove active class from all tabs and contents
+                    dayTabs.forEach(t => t.classList.remove('active'));
+                    dayContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    const targetContent = document.querySelector(`.day-content[data-day="${targetDay}"]`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
     <script>
         function toggleMobileMenu() {
