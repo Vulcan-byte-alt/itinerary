@@ -7613,29 +7613,92 @@
         .hero-container {
             position: relative;
             z-index: 10;
-            max-width: 1400px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 0 40px;
-            display: grid;
-            grid-template-columns: 1fr 450px;
-            gap: 60px;
-            align-items: start;
-            padding-top: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+            padding-bottom: 80px;
         }
 
         .hero-left-content {
             color: white;
-            padding-top: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .hero-title-main {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(16px, 1.8vw, 20px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 50px;
+        }
+
+        .hero-info-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .hero-info-box {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-info-box:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 165, 116, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .hero-info-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hero-info-value {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 600;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .hero-info-value.price {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
         }
 
         .cruise-details-card {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 140px;
+            display: none;
         }
 
         .cruise-line-logo {
@@ -7783,34 +7846,38 @@
             margin-bottom: 8px;
         }
 
-        @media (max-width: 1200px) {
-            .hero-container {
-                grid-template-columns: 1fr 400px;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 968px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding-top: 100px;
-            }
-
-            .cruise-details-card {
-                position: relative;
-                top: 0;
-            }
-        }
-
         @media (max-width: 768px) {
             .itinerary-hero {
                 height: auto;
-                min-height: auto;
+                min-height: 600px;
             }
 
             .hero-container {
-                padding: 100px 20px 40px 20px;
+                padding: 120px 20px 60px 20px;
+            }
+
+            .hero-info-boxes {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .hero-title-main {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-info-box {
+                padding: 16px;
+            }
+
+            .hero-info-value {
+                font-size: 16px;
             }
         }
 
@@ -9053,31 +9120,29 @@
         <div class="itinerary-hero-overlay"></div>
 
         <div class="hero-container">
-            <!-- Left Content -->
+            <!-- Hero Content -->
             <div class="hero-left-content">
-                <div class="hero-kicker" style="color: var(--gold);">Your Journey Awaits</div>
-                <h1 class="hero-title-luxury" style="color: white; margin-bottom: 20px;">
-                    <div class="hero-title-line">
-                        <span>15-Night</span>
-                    </div>
-                    <div class="hero-title-line">
-                        <span class="text-gold">Transatlantic Voyage</span>
-                    </div>
-                </h1>
-                <div class="hero-divider"></div>
-                <p class="hero-tagline-luxury" style="color: rgba(255, 255, 255, 0.9); max-width: 600px;">Barcelona to Miami aboard the luxurious Regent Seven Seas Explorer</p>
+                <h1 class="hero-title-main">15-Night Transatlantic Voyage</h1>
+                <p class="hero-subtitle">Barcelona to Miami aboard the luxurious Regent Seven Seas Explorer</p>
 
-                <!-- Breadcrumb -->
-                <div style="margin-top: 32px; display: flex; align-items: center; gap: 8px; font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.7);">
-                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Home</a>
-                    <span>/</span>
-                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Cruise Offers</a>
-                    <span>/</span>
-                    <span style="color: white;">Transatlantic Voyage</span>
+                <!-- Info Boxes -->
+                <div class="hero-info-boxes">
+                    <div class="hero-info-box">
+                        <div class="hero-info-label">Departure</div>
+                        <div class="hero-info-value">18 May 2026</div>
+                    </div>
+                    <div class="hero-info-box">
+                        <div class="hero-info-label">Duration</div>
+                        <div class="hero-info-value">15 Nights</div>
+                    </div>
+                    <div class="hero-info-box">
+                        <div class="hero-info-label">From</div>
+                        <div class="hero-info-value price">£4,299 <span style="font-size: 16px; color: rgba(255, 255, 255, 0.8);">pp</span></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right: Cruise Details Card -->
+            <!-- Right: Cruise Details Card (Hidden) -->
             <div class="cruise-details-card">
                 <!-- Cruise Line Logo -->
                 <div class="cruise-line-logo">
