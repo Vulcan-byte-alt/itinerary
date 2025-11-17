@@ -10220,6 +10220,28 @@
                     </button>
                 </div>
             </div>
+
+            <script>
+                function toggleTeamExpand() {
+                    const expandedGrid = document.getElementById('teamExpandedGrid');
+                    const toggleText = document.getElementById('teamToggleText');
+                    const toggleArrow = document.getElementById('teamToggleArrow');
+
+                    if (expandedGrid.style.maxHeight === '0px' || !expandedGrid.style.maxHeight) {
+                        // Expand
+                        expandedGrid.style.maxHeight = '3000px';
+                        expandedGrid.style.opacity = '1';
+                        toggleText.textContent = 'Show Less';
+                        toggleArrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Collapse
+                        expandedGrid.style.maxHeight = '0px';
+                        expandedGrid.style.opacity = '0';
+                        toggleText.textContent = 'Meet Our Full Team';
+                        toggleArrow.style.transform = 'rotate(0deg)';
+                    }
+                }
+            </script>
         </div>
     </section>
 
