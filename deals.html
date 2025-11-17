@@ -7993,6 +7993,199 @@
                 z-index: 100 !important;
             }
         }
+
+        /* Luxurious Select2 Styling */
+        .select2-container--default .select2-selection--multiple {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+            border: 2px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 12px !important;
+            padding: 8px 12px !important;
+            min-height: 52px !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 8px rgba(212, 165, 116, 0.08) !important;
+        }
+
+        .select2-container--default .select2-selection--multiple:hover {
+            border-color: rgba(212, 165, 116, 0.4) !important;
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.15) !important;
+        }
+
+        .select2-container--default.select2-container--focus .select2-selection--multiple {
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1), 0 4px 20px rgba(212, 165, 116, 0.2) !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background: linear-gradient(135deg, var(--gold) 0%, #c9a84b 100%) !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 6px 12px !important;
+            color: white !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.3px !important;
+            margin: 4px 6px 4px 0 !important;
+            box-shadow: 0 2px 6px rgba(212, 165, 116, 0.3) !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: white !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            margin-right: 6px !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: white !important;
+            transform: scale(1.2) !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-search__field {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            color: var(--navy) !important;
+            margin: 4px 0 !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-search__field::placeholder {
+            color: rgba(10, 25, 41, 0.4) !important;
+            font-style: italic !important;
+        }
+
+        .select2-dropdown {
+            border: 2px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(212, 165, 116, 0.1) !important;
+            overflow: hidden !important;
+        }
+
+        .select2-container--default .select2-results__option {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            padding: 12px 16px !important;
+            color: var(--navy) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .select2-container--default .select2-results__option--highlighted {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.08) 100%) !important;
+            color: var(--gold) !important;
+            font-weight: 500 !important;
+        }
+
+        .select2-container--default .select2-results__option[aria-selected="true"] {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.25) 0%, rgba(212, 165, 116, 0.15) 100%) !important;
+            color: var(--gold) !important;
+            font-weight: 600 !important;
+        }
+
+        .select2-search--dropdown .select2-search__field {
+            border: 2px solid rgba(212, 165, 116, 0.2) !important;
+            border-radius: 8px !important;
+            padding: 10px 14px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            margin: 8px !important;
+            width: calc(100% - 16px) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .select2-search--dropdown .select2-search__field:focus {
+            border-color: var(--gold) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1) !important;
+        }
+
+        /* Luxurious Standard Dropdown Styling */
+        aside select:not([multiple]),
+        #soloCruises,
+        #orderBySelect {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+            border: 2px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 12px !important;
+            padding: 14px 45px 14px 18px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: var(--navy) !important;
+            cursor: pointer !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 8px rgba(212, 165, 116, 0.08) !important;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            background-image: linear-gradient(135deg, #ffffff 0%, #fafafa 100%),
+                              url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23d4a574' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: left, right 14px center !important;
+            background-size: 100%, 16px !important;
+        }
+
+        aside select:not([multiple]):hover,
+        #soloCruises:hover,
+        #orderBySelect:hover {
+            border-color: rgba(212, 165, 116, 0.5) !important;
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.15) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        aside select:not([multiple]):focus,
+        #soloCruises:focus,
+        #orderBySelect:focus {
+            border-color: var(--gold) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1), 0 4px 20px rgba(212, 165, 116, 0.2) !important;
+        }
+
+        aside select:not([multiple]) option,
+        #soloCruises option,
+        #orderBySelect option {
+            padding: 12px !important;
+            font-family: 'Inter', sans-serif !important;
+            background: white !important;
+            color: var(--navy) !important;
+        }
+
+        /* Enhanced Apply & Clear Buttons */
+        aside button[onclick*="applyFilters"],
+        aside button[onclick*="clearAllFilters"] {
+            position: relative !important;
+            overflow: hidden !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        aside button[onclick*="applyFilters"]:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.35) !important;
+        }
+
+        aside button[onclick*="clearAllFilters"]:hover {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(212, 165, 116, 0.02) 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.2) !important;
+        }
+
+        aside button[onclick*="applyFilters"]::before,
+        aside button[onclick*="clearAllFilters"]::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            width: 0 !important;
+            height: 0 !important;
+            border-radius: 50% !important;
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: translate(-50%, -50%) !important;
+            transition: width 0.6s ease, height 0.6s ease !important;
+        }
+
+        aside button[onclick*="applyFilters"]:active::before,
+        aside button[onclick*="clearAllFilters"]:active::before {
+            width: 300px !important;
+            height: 300px !important;
+        }
     </style>
 
     <!-- Critical CSS to override Tailwind reset - MUST be after Tailwind loads -->
@@ -9541,7 +9734,7 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                                     <!-- Order By Dropdown -->
                                     <div style="display: flex; align-items: center; gap: 8px;">
                                         <span style="font-size: 13px; color: var(--navy); font-weight: 500; font-family: 'Inter', sans-serif;">Order By:</span>
-                                        <select id="orderBySelect" style="padding: 8px 32px 8px 12px; background: white; border: 1px solid rgba(212, 165, 116, 0.3); border-radius: 8px; font-size: 13px; font-family: 'Cinzel', serif; cursor: pointer; appearance: none; -webkit-appearance: none; -moz-appearance: none; color: var(--navy); outline: none; box-shadow: 0 2px 8px rgba(10, 25, 41, 0.04); transition: all 0.3s; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4a574%22 stroke-width=%222%22%3e%3cpolyline points=%226 9 12 15 18 9%22/%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 10px center;" onfocus="this.style.borderColor='var(--gold)'; this.style.boxShadow='0 4px 16px rgba(212, 165, 116, 0.15)'" onblur="this.style.borderColor='rgba(212, 165, 116, 0.3)'; this.style.boxShadow='0 2px 8px rgba(10, 25, 41, 0.04)'">
+                                        <select id="orderBySelect" onchange="sortDeals()" style="padding: 8px 32px 8px 12px; background: white; border: 1px solid rgba(212, 165, 116, 0.3); border-radius: 8px; font-size: 13px; font-family: 'Cinzel', serif; cursor: pointer; appearance: none; -webkit-appearance: none; -moz-appearance: none; color: var(--navy); outline: none; box-shadow: 0 2px 8px rgba(10, 25, 41, 0.04); transition: all 0.3s; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4a574%22 stroke-width=%222%22%3e%3cpolyline points=%226 9 12 15 18 9%22/%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 10px center;" onfocus="this.style.borderColor='var(--gold)'; this.style.boxShadow='0 4px 16px rgba(212, 165, 116, 0.15)'" onblur="this.style.borderColor='rgba(212, 165, 116, 0.3)'; this.style.boxShadow='0 2px 8px rgba(10, 25, 41, 0.04)'">
                                             <option value="date">Date</option>
                                             <option value="price-low">Price: Low to High</option>
                                             <option value="price-high">Price: High to Low</option>
@@ -15072,34 +15265,29 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             initMagneticHover();
         }
 
-        // Clear all filters
+        // Clear all filters - redirects to extended version
         function clearAllFilters() {
-            // Clear all checkboxes
-            document.querySelectorAll('aside input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = false;
-            });
-
-            // Reset all select dropdowns
-            document.querySelectorAll('aside select').forEach(select => {
-                select.selectedIndex = 0;
-            });
-
-            // Reset text inputs
-            document.querySelectorAll('aside input[type="text"]').forEach(input => {
-                input.value = '';
-            });
-
-            // Reset range slider
-            document.querySelectorAll('aside input[type="range"]').forEach(slider => {
-                slider.value = slider.max;
-            });
-
-            console.log('All filters cleared!');
-            applyFilters(); // Reapply filters (show all deals)
+            if (typeof clearAllFiltersExtended === 'function') {
+                clearAllFiltersExtended();
+            } else {
+                // Fallback if extended version not available
+                document.querySelectorAll('aside input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                document.querySelectorAll('aside select').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                document.querySelectorAll('aside input[type="text"]').forEach(input => {
+                    input.value = '';
+                });
+                console.log('All filters cleared!');
+                applyFilters();
+            }
         }
 
         // Apply filters to deals
         function applyFilters() {
+            console.log('Applying filters...');
             const deals = document.querySelectorAll('article[data-deal-id]');
 
             // Get filter values
@@ -15107,7 +15295,17 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             const departureDate = departureDateInput ? departureDateInput.value.toLowerCase() : '';
 
             const departingUK = document.querySelector('aside select')?.value || '';
-            const cruiseType = document.querySelectorAll('aside select')[1]?.value || '';
+            const oceanRiverType = document.querySelectorAll('aside select')[1]?.value || '';
+
+            // Get Select2 multi-select values
+            const shipFilters = $('#shipFilter').val() || [];
+            const portFilters = $('#portFilter').val() || [];
+            const cruiseTypeFilters = $('#cruiseTypeFilter').val() || [];
+            const interestFilters = $('#interestFilter').val() || [];
+            const riverFilters = $('#riverSelect').val() || [];
+
+            // Get Solo Cruises filter
+            const soloCruisesFilter = document.getElementById('soloCruises')?.value || 'no';
 
             // Get checked duration checkboxes
             const durationFilters = Array.from(document.querySelectorAll('aside input[type="checkbox"]:checked'))
@@ -15118,6 +15316,28 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 document.querySelectorAll('.filter-content input[type="checkbox"]:checked')
             ).filter(cb => !cb.value.includes('-')); // Filter out duration values
 
+            // Get destination checkboxes
+            const destinationCheckboxes = Array.from(
+                document.querySelectorAll('aside input[type="checkbox"][value*="destination"]')
+            ).filter(cb => cb.checked);
+
+            // Get cabin type checkboxes
+            const cabinTypeCheckboxes = Array.from(
+                document.querySelectorAll('aside input[type="checkbox"][value*="cabin"]')
+            ).filter(cb => cb.checked);
+
+            // Get budget slider values (if exists)
+            let minBudget = 0;
+            let maxBudget = 999999;
+            const budgetSlider = document.getElementById('budgetSlider');
+            if (budgetSlider && budgetSlider.noUiSlider) {
+                const values = budgetSlider.noUiSlider.get();
+                minBudget = parseInt(values[0]);
+                maxBudget = parseInt(values[1]);
+            }
+
+            let visibleCount = 0;
+
             deals.forEach(deal => {
                 let show = true;
 
@@ -15127,6 +15347,86 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 // Filter by departure date (if entered)
                 if (departureDate && !cardContent.includes(departureDate)) {
                     show = false;
+                }
+
+                // Filter by Departing UK
+                if (departingUK === 'yes') {
+                    if (!cardContent.includes('southampton') && !cardContent.includes('uk port')) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Ocean/River Cruise Type
+                if (oceanRiverType === 'river') {
+                    if (!cardContent.includes('river')) {
+                        show = false;
+                    }
+                } else if (oceanRiverType === 'ocean') {
+                    if (cardContent.includes('river cruise')) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Ship (Select2)
+                if (shipFilters.length > 0) {
+                    const hasShipMatch = shipFilters.some(ship => {
+                        const shipName = ship.replace(/-/g, ' ');
+                        return cardContent.includes(shipName);
+                    });
+                    if (!hasShipMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Port (Select2)
+                if (portFilters.length > 0) {
+                    const hasPortMatch = portFilters.some(port => {
+                        const portName = port.replace(/-/g, ' ');
+                        return cardContent.includes(portName);
+                    });
+                    if (!hasPortMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Cruise Type (Select2)
+                if (cruiseTypeFilters.length > 0) {
+                    const hasCruiseTypeMatch = cruiseTypeFilters.some(type => {
+                        const typeName = type.replace(/-/g, ' ');
+                        return cardContent.includes(typeName);
+                    });
+                    if (!hasCruiseTypeMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Interest (Select2)
+                if (interestFilters.length > 0) {
+                    const hasInterestMatch = interestFilters.some(interest => {
+                        const interestName = interest.replace(/-/g, ' ');
+                        return cardContent.includes(interestName);
+                    });
+                    if (!hasInterestMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by River (Select2) - only applies if ocean/river is set to "river"
+                if (riverFilters.length > 0 && oceanRiverType === 'river') {
+                    const hasRiverMatch = riverFilters.some(river => {
+                        const riverName = river.replace(/-/g, ' ');
+                        return cardContent.includes(riverName);
+                    });
+                    if (!hasRiverMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by Solo Cruises
+                if (soloCruisesFilter === 'yes') {
+                    if (!cardContent.includes('solo') && !cardContent.includes('single')) {
+                        show = false;
+                    }
                 }
 
                 // Filter by duration (if any duration filter is checked)
@@ -15164,46 +15464,51 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                     }
                 }
 
+                // Filter by budget (price range)
+                if (maxBudget < 5000) { // Only filter if slider moved from default
+                    const priceMatch = cardContent.match(/£([\d,]+)/);
+                    if (priceMatch) {
+                        const price = parseInt(priceMatch[1].replace(/,/g, ''));
+                        if (price < minBudget || price > maxBudget) {
+                            show = false;
+                        }
+                    }
+                }
+
                 // Mark deal as filtered or not
                 if (show) {
                     deal.setAttribute('data-filtered', 'false');
                     deal.style.display = ''; // Reset display, let pagination handle it
+                    visibleCount++;
                 } else {
                     deal.setAttribute('data-filtered', 'true');
                     deal.style.display = 'none';
                 }
             });
 
+            console.log(`Filtering complete. ${visibleCount} deals visible.`);
+
+            // Update entries count
+            const entriesCount = document.getElementById('entriesCount');
+            if (entriesCount) {
+                entriesCount.textContent = visibleCount;
+            }
+
             // Update pagination after filtering
-            showPage(1); // Go back to first page after filtering
+            if (typeof showPage === 'function') {
+                showPage(1); // Go back to first page after filtering
+            }
         }
 
-        // Add event listeners to all filter inputs
+        // Initialize deals on page load (removed auto-apply event listeners)
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize all deals as not filtered
             document.querySelectorAll('article[data-deal-id]').forEach(deal => {
                 deal.setAttribute('data-filtered', 'false');
             });
 
-            // Add listeners to checkboxes
-            document.querySelectorAll('aside input[type="checkbox"]').forEach(checkbox => {
-                checkbox.addEventListener('change', applyFilters);
-            });
-
-            // Add listeners to selects
-            document.querySelectorAll('aside select').forEach(select => {
-                select.addEventListener('change', applyFilters);
-            });
-
-            // Add listener to text input (with debounce)
-            const textInput = document.querySelector('aside input[type="text"]');
-            if (textInput) {
-                let timeout;
-                textInput.addEventListener('input', function() {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(applyFilters, 500);
-                });
-            }
+            // Event listeners removed - filters now only apply when "Apply Filters" button is clicked
+            // This gives users control over when filtering happens
         });
 
         // Save/Compare heart button functionality
@@ -17324,6 +17629,25 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 input.value = '';
             });
 
+            // Reset Solo Cruises dropdown
+            const soloCruisesSelect = document.getElementById('soloCruises');
+            if (soloCruisesSelect) {
+                soloCruisesSelect.value = 'no';
+            }
+
+            // Reset Order By dropdown
+            const orderBySelect = document.getElementById('orderBySelect');
+            if (orderBySelect) {
+                orderBySelect.value = 'date';
+            }
+
+            // Reset price toggle to "Per Person"
+            const priceToggle = document.getElementById('priceToggle');
+            if (priceToggle) {
+                priceToggle.checked = false;
+                togglePriceDisplay();
+            }
+
             console.log('All filters cleared (including new Select2 filters)!');
 
             // Call original applyFilters if it exists
@@ -17345,21 +17669,135 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             var toggle = document.getElementById('priceToggle');
             var isTotal = toggle.checked;
 
-            // Here you would update all price displays
-            // For now, just log the state
             console.log('Price Display Mode:', isTotal ? 'Total Price' : 'Per Person');
 
-            // TODO: Update all price displays in cards based on toggle state
+            // Get all price elements in deal cards
+            const priceElements = document.querySelectorAll('[data-price-per-person], [data-price-total]');
+
+            priceElements.forEach(element => {
+                const perPersonPrice = element.getAttribute('data-price-per-person');
+                const totalPrice = element.getAttribute('data-price-total');
+
+                if (perPersonPrice && totalPrice) {
+                    if (isTotal) {
+                        // Show total price
+                        element.textContent = '£' + totalPrice;
+                    } else {
+                        // Show per person price
+                        element.textContent = '£' + perPersonPrice;
+                    }
+                }
+            });
+
+            // Update toggle slider appearance
+            const slider = toggle.nextElementSibling;
+            const knob = slider.nextElementSibling;
+            if (isTotal) {
+                slider.style.background = 'var(--gold)';
+                knob.style.transform = 'translateX(24px)';
+            } else {
+                slider.style.background = 'rgba(212, 165, 116, 0.2)';
+                knob.style.transform = 'translateX(0)';
+            }
         }
 
-        // Filter Solo Cruises
-        function filterSoloCruises() {
-            var checkbox = document.getElementById('soloCruises');
-            var isChecked = checkbox.checked;
+        // Sort deals by selected criteria
+        function sortDeals() {
+            const orderBySelect = document.getElementById('orderBySelect');
+            const sortCriteria = orderBySelect ? orderBySelect.value : 'featured';
 
-            console.log('Solo Cruises Filter:', isChecked ? 'Enabled' : 'Disabled');
+            console.log('Sorting by:', sortCriteria);
 
-            // TODO: Implement solo cruises filtering logic
+            const dealsContainer = document.getElementById('dealsContainer');
+            if (!dealsContainer) return;
+
+            const deals = Array.from(dealsContainer.querySelectorAll('article[data-deal-id]'));
+            const visibleDeals = deals.filter(deal => deal.getAttribute('data-filtered') !== 'true');
+
+            // Sort the visible deals
+            visibleDeals.sort((a, b) => {
+                const aContent = a.textContent.toLowerCase();
+                const bContent = b.textContent.toLowerCase();
+
+                switch(sortCriteria) {
+                    case 'date':
+                        // Sort by departure date (extract date from content)
+                        const aDate = extractDate(aContent);
+                        const bDate = extractDate(bContent);
+                        return aDate - bDate;
+
+                    case 'price-low':
+                        // Sort by price: low to high
+                        const aPrice = extractPrice(aContent);
+                        const bPrice = extractPrice(bContent);
+                        return aPrice - bPrice;
+
+                    case 'price-high':
+                        // Sort by price: high to low
+                        const aPriceHigh = extractPrice(aContent);
+                        const bPriceHigh = extractPrice(bContent);
+                        return bPriceHigh - aPriceHigh;
+
+                    case 'duration-short':
+                        // Sort by duration: shortest first
+                        const aDuration = extractDuration(aContent);
+                        const bDuration = extractDuration(bContent);
+                        return aDuration - bDuration;
+
+                    case 'duration-long':
+                        // Sort by duration: longest first
+                        const aDurationLong = extractDuration(aContent);
+                        const bDurationLong = extractDuration(bContent);
+                        return bDurationLong - aDurationLong;
+
+                    default: // 'featured'
+                        return 0; // Keep original order
+                }
+            });
+
+            // Re-append sorted deals to container
+            visibleDeals.forEach(deal => {
+                dealsContainer.appendChild(deal);
+            });
+
+            // Update pagination
+            if (typeof showPage === 'function') {
+                showPage(1);
+            }
+        }
+
+        // Helper function to extract price from card content
+        function extractPrice(content) {
+            const priceMatch = content.match(/£([\d,]+)/);
+            return priceMatch ? parseInt(priceMatch[1].replace(/,/g, '')) : 999999;
+        }
+
+        // Helper function to extract duration from card content
+        function extractDuration(content) {
+            const durationMatch = content.match(/(\d+)\s+nights?/i);
+            return durationMatch ? parseInt(durationMatch[1]) : 0;
+        }
+
+        // Helper function to extract date from card content
+        function extractDate(content) {
+            // This is a simplified version - you may need to adjust based on actual date format
+            const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+            let earliestDate = new Date('2099-12-31');
+
+            months.forEach((month, index) => {
+                if (content.includes(month)) {
+                    const yearMatch = content.match(/\b(20\d{2})\b/);
+                    if (yearMatch) {
+                        const year = parseInt(yearMatch[1]);
+                        const date = new Date(year, index, 1);
+                        if (date < earliestDate) {
+                            earliestDate = date;
+                        }
+                    }
+                }
+            });
+
+            return earliestDate;
         }
 
         // Switch to Grid View (3 cards per row - VERTICAL cards)
