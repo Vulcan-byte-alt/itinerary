@@ -7993,6 +7993,172 @@
                 z-index: 100 !important;
             }
         }
+
+        /* =============================================
+           LUXURIOUS SELECT2 DROPDOWN STYLING
+           ============================================= */
+
+        /* Select2 Container */
+        .select2-container--default .select2-selection--multiple {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfcfb 100%) !important;
+            border: 1.5px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 12px !important;
+            padding: 8px 12px !important;
+            min-height: 46px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 12px rgba(10, 25, 41, 0.04) !important;
+        }
+
+        .select2-container--default.select2-container--focus .select2-selection--multiple {
+            border-color: var(--gold) !important;
+            box-shadow: 0 4px 20px rgba(212, 165, 116, 0.2), 0 0 0 3px rgba(212, 165, 116, 0.08) !important;
+        }
+
+        /* Selected Items (Tags) */
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background: linear-gradient(135deg, var(--navy) 0%, #1e3a52 100%) !important;
+            border: none !important;
+            border-radius: 8px !important;
+            color: white !important;
+            padding: 6px 12px !important;
+            margin: 4px 6px 4px 0 !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            font-family: 'Montserrat', sans-serif !important;
+            letter-spacing: 0.3px !important;
+            box-shadow: 0 2px 8px rgba(10, 25, 41, 0.15) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
+            background: linear-gradient(135deg, #1e3a52 0%, var(--navy) 100%) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(10, 25, 41, 0.25) !important;
+        }
+
+        /* Remove Button */
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: rgba(255, 255, 255, 0.7) !important;
+            margin-right: 8px !important;
+            font-size: 16px !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: white !important;
+            background: transparent !important;
+        }
+
+        /* Placeholder */
+        .select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+            color: rgba(10, 25, 41, 0.4) !important;
+            font-size: 14px !important;
+            font-family: 'Cinzel', serif !important;
+            font-weight: 400 !important;
+        }
+
+        /* Dropdown */
+        .select2-container--default .select2-results__option {
+            padding: 12px 16px !important;
+            font-size: 14px !important;
+            font-family: 'Cinzel', serif !important;
+            color: var(--navy) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%) !important;
+            color: var(--navy) !important;
+        }
+
+        .select2-container--default .select2-results__option[aria-selected=true] {
+            background: linear-gradient(135deg, var(--gold) 0%, #c9a84b 100%) !important;
+            color: white !important;
+            font-weight: 500 !important;
+        }
+
+        /* Dropdown Container */
+        .select2-dropdown {
+            border: 1.5px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 32px rgba(10, 25, 41, 0.15) !important;
+            background: white !important;
+            margin-top: 4px !important;
+        }
+
+        /* Search Input in Dropdown */
+        .select2-search--dropdown .select2-search__field {
+            border: 1.5px solid rgba(212, 165, 116, 0.25) !important;
+            border-radius: 8px !important;
+            padding: 10px 14px !important;
+            font-family: 'Cinzel', serif !important;
+            font-size: 14px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .select2-search--dropdown .select2-search__field:focus {
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1) !important;
+            outline: none !important;
+        }
+
+        /* Clear Button */
+        .select2-selection__clear {
+            color: rgba(10, 25, 41, 0.4) !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .select2-selection__clear:hover {
+            color: var(--gold) !important;
+        }
+
+        /* Arrow */
+        .select2-container--default .select2-selection--multiple .select2-selection__arrow {
+            display: none !important;
+        }
+
+        /* No Results Message */
+        .select2-results__option.select2-results__message {
+            color: rgba(10, 25, 41, 0.5) !important;
+            font-style: italic !important;
+            padding: 16px !important;
+        }
+
+        /* Loading Message */
+        .select2-results__option--loading {
+            color: var(--gold) !important;
+        }
+
+        /* =============================================
+           LUXURIOUS TOGGLE SWITCH STYLING
+           ============================================= */
+
+        /* Price Toggle Switch */
+        #priceToggle:checked + span {
+            background: rgba(212, 165, 116, 0.6) !important;
+        }
+
+        #priceToggle:checked + span + span {
+            transform: translateX(24px) !important;
+        }
+
+        /* Enhance the toggle slider */
+        #priceToggle + span {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        /* Enhance the toggle knob */
+        #priceToggle + span + span {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        #priceToggle:checked + span + span {
+            box-shadow: 0 2px 12px rgba(212, 165, 116, 0.4) !important;
+        }
     </style>
 
     <!-- Critical CSS to override Tailwind reset - MUST be after Tailwind loads -->
@@ -15185,25 +15351,11 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 deal.setAttribute('data-filtered', 'false');
             });
 
-            // Add listeners to checkboxes
-            document.querySelectorAll('aside input[type="checkbox"]').forEach(checkbox => {
-                checkbox.addEventListener('change', applyFilters);
-            });
+            // REMOVED: Automatic filter application
+            // Filters now only apply when the "Apply" button is clicked
+            // This gives users better control over their filtering experience
 
-            // Add listeners to selects
-            document.querySelectorAll('aside select').forEach(select => {
-                select.addEventListener('change', applyFilters);
-            });
-
-            // Add listener to text input (with debounce)
-            const textInput = document.querySelector('aside input[type="text"]');
-            if (textInput) {
-                let timeout;
-                textInput.addEventListener('input', function() {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(applyFilters, 500);
-                });
-            }
+            // Text input also only applies on button click (no automatic debounce)
         });
 
         // Save/Compare heart button functionality
@@ -17271,23 +17423,189 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             });
         });
 
-        // Update searchQuery function to include new filters
+        // Comprehensive Filter Application Function
         function searchQuery() {
-            console.log('=== Filter Values ===');
-            console.log('Ship:', $('#shipFilter').val());
-            console.log('Port:', $('#portFilter').val());
-            console.log('River:', $('#riverSelect').val());
-            console.log('Cruise Type:', $('#cruiseTypeFilter').val());
-            console.log('Interest:', $('#interestFilter').val());
+            console.log('=== Applying Filters ===');
 
-            var budgetSlider = document.getElementById('budgetSlider');
+            // Get all filter values
+            const selectedShips = $('#shipFilter').val() || [];
+            const selectedPorts = $('#portFilter').val() || [];
+            const selectedRivers = $('#riverSelect').val() || [];
+            const selectedCruiseTypes = $('#cruiseTypeFilter').val() || [];
+            const selectedInterests = $('#interestFilter').val() || [];
+
+            // Get checked duration checkboxes
+            const selectedDurations = Array.from(document.querySelectorAll('.filter-content input[type="checkbox"]:checked'))
+                .filter(cb => cb.value.includes('-'))
+                .map(cb => cb.value);
+
+            // Get cruise line checkboxes
+            const selectedCruiseLines = Array.from(
+                document.querySelectorAll('.filter-content input[type="checkbox"]:checked')
+            ).filter(cb => !cb.value.includes('-'))
+            .map(cb => cb.nextElementSibling?.textContent.trim().toLowerCase() || '');
+
+            // Get destination checkboxes
+            const selectedDestinations = Array.from(
+                document.querySelectorAll('.filter-content input[type="checkbox"]:checked')
+            ).map(cb => {
+                const parentButton = cb.closest('.filter-content')?.previousElementSibling;
+                const isDestination = parentButton?.textContent.includes('Destination');
+                return isDestination ? cb.nextElementSibling?.textContent.trim().toLowerCase() : null;
+            }).filter(Boolean);
+
+            // Get other filters
+            const departureDate = document.querySelector('aside input[type="text"]')?.value.toLowerCase() || '';
+            const departingUK = document.querySelectorAll('aside select:not([multiple])')[0]?.value || '';
+            const cruiseTypeSelect = document.querySelectorAll('aside select:not([multiple])')[1]?.value || '';
+            const cabinType = document.querySelectorAll('aside select:not([multiple])')[2]?.value || '';
+
+            // Get budget range
+            let budgetMin = 0;
+            let budgetMax = 999999;
+            const budgetSlider = document.getElementById('budgetSlider');
             if (budgetSlider && budgetSlider.noUiSlider) {
-                var budgetValues = budgetSlider.noUiSlider.get();
-                console.log('Budget Range:', budgetValues);
+                const budgetValues = budgetSlider.noUiSlider.get();
+                budgetMin = parseInt(budgetValues[0]);
+                budgetMax = parseInt(budgetValues[1]);
+                if (budgetMax >= 5000) budgetMax = 999999; // 5000+ means no upper limit
             }
 
-            // Add your filter search logic here
-            alert('Filters applied! Check console for values.');
+            console.log('Ships:', selectedShips);
+            console.log('Ports:', selectedPorts);
+            console.log('Rivers:', selectedRivers);
+            console.log('Cruise Types:', selectedCruiseTypes);
+            console.log('Interests:', selectedInterests);
+            console.log('Durations:', selectedDurations);
+            console.log('Cruise Lines:', selectedCruiseLines);
+            console.log('Destinations:', selectedDestinations);
+            console.log('Budget:', budgetMin, '-', budgetMax);
+
+            // Apply filters to all deals
+            const deals = document.querySelectorAll('article[data-deal-id]');
+            let visibleCount = 0;
+
+            deals.forEach(deal => {
+                const cardContent = deal.textContent.toLowerCase();
+                let show = true;
+
+                // Filter by departure date
+                if (departureDate && !cardContent.includes(departureDate)) {
+                    show = false;
+                }
+
+                // Filter by ships (Select2)
+                if (selectedShips.length > 0) {
+                    const hasShipMatch = selectedShips.some(ship =>
+                        cardContent.includes(ship.toLowerCase())
+                    );
+                    if (!hasShipMatch) show = false;
+                }
+
+                // Filter by ports (Select2)
+                if (selectedPorts.length > 0) {
+                    const hasPortMatch = selectedPorts.some(port =>
+                        cardContent.includes(port.toLowerCase())
+                    );
+                    if (!hasPortMatch) show = false;
+                }
+
+                // Filter by rivers (Select2)
+                if (selectedRivers.length > 0) {
+                    const hasRiverMatch = selectedRivers.some(river =>
+                        cardContent.includes(river.toLowerCase())
+                    );
+                    if (!hasRiverMatch) show = false;
+                }
+
+                // Filter by cruise types (Select2)
+                if (selectedCruiseTypes.length > 0) {
+                    const hasCruiseTypeMatch = selectedCruiseTypes.some(type =>
+                        cardContent.includes(type.toLowerCase())
+                    );
+                    if (!hasCruiseTypeMatch) show = false;
+                }
+
+                // Filter by interests (Select2)
+                if (selectedInterests.length > 0) {
+                    const hasInterestMatch = selectedInterests.some(interest =>
+                        cardContent.includes(interest.toLowerCase())
+                    );
+                    if (!hasInterestMatch) show = false;
+                }
+
+                // Filter by duration
+                if (selectedDurations.length > 0) {
+                    const hasDurationMatch = selectedDurations.some(filter => {
+                        if (filter === '1-5') {
+                            return /[1-5]\s+night/i.test(cardContent);
+                        } else if (filter === '3-6') {
+                            return /[3-6]\s+night/i.test(cardContent);
+                        } else if (filter === '7-9') {
+                            return /[7-9]\s+night/i.test(cardContent);
+                        } else if (filter === '10-14') {
+                            return /(10|11|12|13|14)\s+night/i.test(cardContent);
+                        } else if (filter === '14-365') {
+                            return /(1[4-9]|[2-9][0-9])\s+night/i.test(cardContent);
+                        }
+                        return false;
+                    });
+                    if (!hasDurationMatch) show = false;
+                }
+
+                // Filter by cruise line
+                if (selectedCruiseLines.length > 0) {
+                    const hasCruiseLineMatch = selectedCruiseLines.some(line =>
+                        cardContent.includes(line)
+                    );
+                    if (!hasCruiseLineMatch) show = false;
+                }
+
+                // Filter by destination
+                if (selectedDestinations.length > 0) {
+                    const hasDestinationMatch = selectedDestinations.some(dest =>
+                        cardContent.includes(dest)
+                    );
+                    if (!hasDestinationMatch) show = false;
+                }
+
+                // Filter by cabin type
+                if (cabinType && cabinType !== '') {
+                    if (!cardContent.includes(cabinType.toLowerCase())) {
+                        show = false;
+                    }
+                }
+
+                // Filter by budget (extract price from card)
+                const priceMatch = cardContent.match(/£(\d{1,3},?\d{0,3})\s*pp/);
+                if (priceMatch) {
+                    const price = parseInt(priceMatch[1].replace(',', ''));
+                    if (price < budgetMin || price > budgetMax) {
+                        show = false;
+                    }
+                }
+
+                // Apply visibility
+                if (show) {
+                    deal.setAttribute('data-filtered', 'false');
+                    visibleCount++;
+                } else {
+                    deal.setAttribute('data-filtered', 'true');
+                }
+            });
+
+            // Update visible count
+            const entriesCount = document.getElementById('entriesCount');
+            if (entriesCount) {
+                entriesCount.textContent = visibleCount;
+            }
+
+            // Reset to page 1 and update pagination
+            if (typeof showPage === 'function') {
+                showPage(1);
+            }
+
+            console.log('Filters applied! Showing', visibleCount, 'deals');
         }
 
         // Enhanced clearAllFilters function (extends original)
@@ -17324,11 +17642,42 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 input.value = '';
             });
 
+            // Reset Solo Cruises dropdown
+            const soloCruisesSelect = document.getElementById('soloCruises');
+            if (soloCruisesSelect) {
+                soloCruisesSelect.value = 'no';
+            }
+
+            // Reset Order By dropdown
+            const orderBySelect = document.getElementById('orderBySelect');
+            if (orderBySelect) {
+                orderBySelect.value = 'date';
+            }
+
+            // Reset Price Toggle to Per Person
+            const priceToggle = document.getElementById('priceToggle');
+            if (priceToggle && priceToggle.checked) {
+                priceToggle.checked = false;
+                togglePriceDisplay();
+            }
+
             console.log('All filters cleared (including new Select2 filters)!');
 
-            // Call original applyFilters if it exists
-            if (typeof applyFilters === 'function') {
-                applyFilters();
+            // Reset all deals to visible
+            document.querySelectorAll('article[data-deal-id]').forEach(deal => {
+                deal.setAttribute('data-filtered', 'false');
+            });
+
+            // Update visible count
+            const totalDeals = document.querySelectorAll('article[data-deal-id]').length;
+            const entriesCount = document.getElementById('entriesCount');
+            if (entriesCount) {
+                entriesCount.textContent = totalDeals;
+            }
+
+            // Reset to first page
+            if (typeof showPage === 'function') {
+                showPage(1);
             }
         }
 
@@ -17342,25 +17691,182 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
 
         // Toggle Price Display (Per Person / Total Price)
         function togglePriceDisplay() {
-            var toggle = document.getElementById('priceToggle');
-            var isTotal = toggle.checked;
+            const toggle = document.getElementById('priceToggle');
+            const isTotal = toggle.checked;
 
-            // Here you would update all price displays
-            // For now, just log the state
             console.log('Price Display Mode:', isTotal ? 'Total Price' : 'Per Person');
 
-            // TODO: Update all price displays in cards based on toggle state
+            // Get all deal cards
+            const deals = document.querySelectorAll('article[data-deal-id]');
+
+            deals.forEach(deal => {
+                // Find the price display span in the floating price card
+                const priceSpan = deal.querySelector('[style*="font-size: 30px"]');
+                const ppSpan = deal.querySelector('[style*="font-size: 15px"]');
+
+                if (priceSpan && ppSpan) {
+                    // Extract current price (assuming format like £4549)
+                    const currentPriceText = priceSpan.textContent.trim();
+                    const priceMatch = currentPriceText.match(/£([\d,]+)/);
+
+                    if (priceMatch) {
+                        const currentPrice = parseInt(priceMatch[1].replace(',', ''));
+
+                        if (isTotal) {
+                            // Convert to total price (multiply by 2 for 2 people)
+                            const totalPrice = currentPrice * 2;
+                            priceSpan.textContent = `£${totalPrice.toLocaleString()}`;
+                            ppSpan.textContent = 'total';
+                        } else {
+                            // Convert back to per person (divide by 2)
+                            // Only if currently showing total
+                            if (ppSpan.textContent.includes('total')) {
+                                const perPersonPrice = Math.round(currentPrice / 2);
+                                priceSpan.textContent = `£${perPersonPrice.toLocaleString()}`;
+                                ppSpan.textContent = 'pp';
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Update toggle slider appearance
+            const slider = toggle.nextElementSibling;
+            const knob = slider?.nextElementSibling;
+
+            if (isTotal && slider && knob) {
+                slider.style.background = 'rgba(212, 165, 116, 0.6)';
+                knob.style.transform = 'translateX(24px)';
+            } else if (slider && knob) {
+                slider.style.background = 'rgba(212, 165, 116, 0.2)';
+                knob.style.transform = 'translateX(0)';
+            }
         }
 
         // Filter Solo Cruises
         function filterSoloCruises() {
-            var checkbox = document.getElementById('soloCruises');
-            var isChecked = checkbox.checked;
+            const select = document.getElementById('soloCruises');
+            const showSoloOnly = select.value === 'yes';
 
-            console.log('Solo Cruises Filter:', isChecked ? 'Enabled' : 'Disabled');
+            console.log('Solo Cruises Filter:', showSoloOnly ? 'Yes - Show only solo cruises' : 'No - Show all');
 
-            // TODO: Implement solo cruises filtering logic
+            const deals = document.querySelectorAll('article[data-deal-id]');
+            let visibleCount = 0;
+
+            deals.forEach(deal => {
+                const cardContent = deal.textContent.toLowerCase();
+
+                // Check if already filtered by other filters
+                const isFiltered = deal.getAttribute('data-filtered') === 'true';
+
+                if (!isFiltered) {
+                    if (showSoloOnly) {
+                        // Only show deals that mention "solo" in the content
+                        const isSolo = cardContent.includes('solo') || cardContent.includes('single');
+
+                        if (!isSolo) {
+                            deal.setAttribute('data-filtered', 'true');
+                        } else {
+                            visibleCount++;
+                        }
+                    } else {
+                        // Show all non-filtered deals
+                        visibleCount++;
+                    }
+                }
+            });
+
+            // Update visible count
+            const entriesCount = document.getElementById('entriesCount');
+            if (entriesCount) {
+                entriesCount.textContent = visibleCount;
+            }
+
+            // Reset pagination to page 1
+            if (typeof showPage === 'function') {
+                showPage(1);
+            }
         }
+
+        // Sort/Order By Functionality
+        function applySorting() {
+            const orderSelect = document.getElementById('orderBySelect');
+            const orderBy = orderSelect?.value || 'date';
+
+            console.log('Sorting by:', orderBy);
+
+            const dealsContainer = document.getElementById('dealsContainer');
+            if (!dealsContainer) return;
+
+            // Get all visible (non-filtered) deals
+            const deals = Array.from(document.querySelectorAll('article[data-deal-id]'))
+                .filter(deal => deal.getAttribute('data-filtered') !== 'true');
+
+            // Sort deals based on selected option
+            deals.sort((a, b) => {
+                const aContent = a.textContent.toLowerCase();
+                const bContent = b.textContent.toLowerCase();
+
+                switch(orderBy) {
+                    case 'price-low':
+                        // Extract prices and sort low to high
+                        const aPriceMatch = aContent.match(/£([\d,]+)\s*pp/);
+                        const bPriceMatch = bContent.match(/£([\d,]+)\s*pp/);
+                        const aPrice = aPriceMatch ? parseInt(aPriceMatch[1].replace(',', '')) : 999999;
+                        const bPrice = bPriceMatch ? parseInt(bPriceMatch[1].replace(',', '')) : 999999;
+                        return aPrice - bPrice;
+
+                    case 'price-high':
+                        // Extract prices and sort high to low
+                        const aPriceH = aContent.match(/£([\d,]+)\s*pp/);
+                        const bPriceH = bContent.match(/£([\d,]+)\s*pp/);
+                        const aPriceHigh = aPriceH ? parseInt(aPriceH[1].replace(',', '')) : 0;
+                        const bPriceHigh = bPriceH ? parseInt(bPriceH[1].replace(',', '')) : 0;
+                        return bPriceHigh - aPriceHigh;
+
+                    case 'duration-short':
+                        // Extract duration and sort shortest first
+                        const aDuration = aContent.match(/(\d+)\s+night/i);
+                        const bDuration = bContent.match(/(\d+)\s+night/i);
+                        const aDays = aDuration ? parseInt(aDuration[1]) : 999;
+                        const bDays = bDuration ? parseInt(bDuration[1]) : 999;
+                        return aDays - bDays;
+
+                    case 'duration-long':
+                        // Extract duration and sort longest first
+                        const aDurationL = aContent.match(/(\d+)\s+night/i);
+                        const bDurationL = bContent.match(/(\d+)\s+night/i);
+                        const aDaysL = aDurationL ? parseInt(aDurationL[1]) : 0;
+                        const bDaysL = bDurationL ? parseInt(bDurationL[1]) : 0;
+                        return bDaysL - aDaysL;
+
+                    case 'date':
+                    default:
+                        // Keep original order (by data-deal-id)
+                        const aId = parseInt(a.getAttribute('data-deal-id') || '0');
+                        const bId = parseInt(b.getAttribute('data-deal-id') || '0');
+                        return bId - aId; // Descending order (newest first)
+                }
+            });
+
+            // Reorder the DOM elements
+            deals.forEach(deal => {
+                dealsContainer.appendChild(deal);
+            });
+
+            // Reset to page 1 after sorting
+            if (typeof showPage === 'function') {
+                showPage(1);
+            }
+        }
+
+        // Add event listener for order by select
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderSelect = document.getElementById('orderBySelect');
+            if (orderSelect) {
+                orderSelect.addEventListener('change', applySorting);
+            }
+        });
 
         // Switch to Grid View (3 cards per row - VERTICAL cards)
         function switchToGridView() {
