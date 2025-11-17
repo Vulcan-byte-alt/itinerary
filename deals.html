@@ -191,9 +191,11 @@
             left: 0;
             background: linear-gradient(135deg, #0a1929 0%, #1a2f42 100%);
             border-radius: 20px;
-            padding: 28px;
-            width: 720px;
+            padding: 24px;
+            width: 850px;
             max-width: calc(100vw - 80px);
+            max-height: 580px;
+            overflow-y: auto;
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
@@ -206,6 +208,25 @@
                 0 20px 60px -10px rgba(0, 0, 0, 0.6),
                 0 40px 100px -20px rgba(0, 0, 0, 0.5);
             border: 1.5px solid rgba(212, 165, 116, 0.25);
+        }
+
+        /* Custom scrollbar for mega menu */
+        .mega-menu::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .mega-menu::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .mega-menu::-webkit-scrollbar-thumb {
+            background: rgba(212, 165, 116, 0.4);
+            border-radius: 10px;
+        }
+
+        .mega-menu::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 165, 116, 0.6);
         }
 
         .mega-menu::before {
@@ -232,12 +253,13 @@
         @media (min-width: 769px) {
             .mega-menu {
                 /* Prevent right overflow */
-                max-width: min(800px, calc(100vw - 80px));
+                max-width: min(850px, calc(100vw - 80px));
             }
 
             /* For items on right side, align to right edge instead */
             .nav-item-with-dropdown:last-child .mega-menu,
-            .nav-item-with-dropdown:nth-last-child(2) .mega-menu {
+            .nav-item-with-dropdown:nth-last-child(2) .mega-menu,
+            .nav-item-with-dropdown:nth-last-child(3) .mega-menu {
                 left: auto;
                 right: 0;
             }
@@ -255,7 +277,7 @@
         .mega-menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 14px;
         }
 
         .mega-menu-item {
@@ -330,7 +352,7 @@
 
         .mega-menu-image {
             width: 100%;
-            height: 120px;
+            height: 100px;
             object-fit: cover;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -8265,8 +8287,8 @@
                             <!-- Mega Menu for Cruise Offers -->
                             <div class="mega-menu">
                                 <!-- Featured Items with Images -->
-                                <div style="margin-bottom: 24px;">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 16px; padding: 0 24px;">Featured Offers</h4>
+                                <div style="margin-bottom: 16px;">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 12px; padding: 0 4px;">Featured Offers</h4>
                                     <div class="mega-menu-grid">
                                         <a href="https://www.sixstarcruises.co.uk/last-minute-luxury-cruises" class="mega-menu-item"
                                             style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
@@ -8298,15 +8320,15 @@
                                 </div>
 
                                 <!-- Additional Items (Text Only) -->
-                                <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">More Offers</h4>
+                                <div style="padding: 12px 4px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 10px;">More Offers</h4>
                                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                                        <a href="https://www.sixstarcruises.co.uk/black-friday-luxury-cruise-deals-2025" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Black Friday Deals 2025</a>
-                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2025" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2025 Luxury Cruises</a>
-                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2026" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2026 Luxury Cruises</a>
-                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2027" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2027 Luxury Cruises</a>
-                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2028" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2028 Luxury Cruises</a>
-                                        <a href="https://www.sixstarcruises.co.uk/luxury-solo-cruise-deals" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Luxury Solo Cruise Deals</a>
+                                        <a href="https://www.sixstarcruises.co.uk/black-friday-luxury-cruise-deals-2025" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Black Friday Deals 2025</a>
+                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2025" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2025 Luxury Cruises</a>
+                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2026" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2026 Luxury Cruises</a>
+                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2027" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2027 Luxury Cruises</a>
+                                        <a href="https://www.sixstarcruises.co.uk/luxury-cruises-2028" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">2028 Luxury Cruises</a>
+                                        <a href="https://www.sixstarcruises.co.uk/luxury-solo-cruise-deals" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Luxury Solo Cruise Deals</a>
                                     </div>
                                 </div>
                             </div>
@@ -8324,8 +8346,8 @@
                             <!-- Mega Menu for Cruise Lines -->
                             <div class="mega-menu">
                                 <!-- Featured Items with Images -->
-                                <div style="margin-bottom: 24px;">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 16px; padding: 0 24px;">Featured Cruise Lines</h4>
+                                <div style="margin-bottom: 16px;">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 12px; padding: 0 4px;">Featured Cruise Lines</h4>
                                     <div class="mega-menu-grid">
                                         <a href="/luxury-cruise/regent-seven-seas-cruises" class="mega-menu-item"
                                             style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
@@ -8357,31 +8379,31 @@
                                 </div>
 
                                 <!-- Ocean Cruise Lines (Text Only) -->
-                                <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Ocean Cruise Lines</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                                        <a href="/cruise-line" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">All Cruiselines</a>
-                                        <a href="/luxury-cruise/ae-expeditions" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AE Expeditions</a>
-                                        <a href="/luxury-cruise/atlas-ocean-voyages" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Atlas Ocean Voyages</a>
-                                        <a href="/luxury-cruise/azamara-club-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Azamara</a>
-                                        <a href="/luxury-cruise/celebrity-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Celebrity Cruises</a>
-                                        <a href="/luxury-cruise/crystal-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Crystal Cruises</a>
-                                        <a href="/luxury-cruise/cunard-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Cunard Cruises</a>
-                                        <a href="/luxury-cruise/explora-journeys" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Explora Journeys</a>
-                                        <a href="/luxury-cruise/oceania-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Cruises</a>
-                                        <a href="/luxury-cruise/scenic-ocean-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Scenic Ocean Cruises</a>
-                                        <a href="/luxury-cruise/viking-ocean-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Viking Ocean Cruises</a>
+                                <div style="padding: 12px 4px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 10px;">Ocean Cruise Lines</h4>
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 10px;">
+                                        <a href="/cruise-line" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">All Cruiselines</a>
+                                        <a href="/luxury-cruise/ae-expeditions" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AE Expeditions</a>
+                                        <a href="/luxury-cruise/atlas-ocean-voyages" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Atlas Ocean Voyages</a>
+                                        <a href="/luxury-cruise/azamara-club-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Azamara</a>
+                                        <a href="/luxury-cruise/celebrity-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Celebrity Cruises</a>
+                                        <a href="/luxury-cruise/crystal-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Crystal Cruises</a>
+                                        <a href="/luxury-cruise/cunard-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Cunard Cruises</a>
+                                        <a href="/luxury-cruise/explora-journeys" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Explora Journeys</a>
+                                        <a href="/luxury-cruise/oceania-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Cruises</a>
+                                        <a href="/luxury-cruise/scenic-ocean-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Scenic Ocean Cruises</a>
+                                        <a href="/luxury-cruise/viking-ocean-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Viking Ocean Cruises</a>
                                     </div>
                                 </div>
 
                                 <!-- River Cruise Lines -->
-                                <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">River Cruise Lines</h4>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                                        <a href="/luxury-cruise/amawaterways" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AmaWaterways</a>
-                                        <a href="/luxury-cruise/emerald-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Emerald Cruises</a>
-                                        <a href="/luxury-cruise/scenic-tours-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Scenic Tours River Cruises</a>
-                                        <a href="/luxury-cruise/uniworld-boutique-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">UNIWORLD Boutique River Cruises</a>
+                                <div style="padding: 12px 4px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 10px;">River Cruise Lines</h4>
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 10px;">
+                                        <a href="/luxury-cruise/amawaterways" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">AmaWaterways</a>
+                                        <a href="/luxury-cruise/emerald-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Emerald Cruises</a>
+                                        <a href="/luxury-cruise/scenic-tours-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Scenic Tours River Cruises</a>
+                                        <a href="/luxury-cruise/uniworld-boutique-river-cruises" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">UNIWORLD Boutique River Cruises</a>
                                     </div>
                                 </div>
                             </div>
@@ -8399,8 +8421,8 @@
                             <!-- Mega Menu for Popular Ships -->
                             <div class="mega-menu">
                                 <!-- Featured Items with Images -->
-                                <div style="margin-bottom: 24px;">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 16px; padding: 0 24px;">Featured Ships</h4>
+                                <div style="margin-bottom: 16px;">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4af37; margin-bottom: 12px; padding: 0 4px;">Featured Ships</h4>
                                     <div class="mega-menu-grid">
                                         <a href="/luxury-cruise/seven-seas-prestige" class="mega-menu-item"
                                             style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
@@ -8432,21 +8454,21 @@
                                 </div>
 
                                 <!-- Additional Items (Text Only) -->
-                                <div style="padding: 20px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">More Ships</h4>
+                                <div style="padding: 12px 4px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <h4 style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 10px;">More Ships</h4>
                                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                                        <a href="/luxury-cruise/seven-seas-mariner" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seven Seas Mariner</a>
-                                        <a href="/luxury-cruise/seven-seas-voyager" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seven Seas Voyager</a>
-                                        <a href="/luxury-cruise/silversea/silver-dawn" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Dawn</a>
-                                        <a href="/luxury-cruise/silversea/silver-nova" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Nova</a>
-                                        <a href="/luxury-cruise/silver-spirit" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Spirit</a>
-                                        <a href="/luxury-cruise/oceania-marina" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Marina</a>
-                                        <a href="/luxury-cruise/oceania-riviera" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Riviera</a>
-                                        <a href="/luxury-cruise/oceania-vista" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Vista</a>
-                                        <a href="/luxury-cruise/seabourn-ovation" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Ovation</a>
-                                        <a href="/luxury-cruise/seabourn-quest" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Quest</a>
-                                        <a href="/luxury-cruise/seabourn-encore" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Encore</a>
-                                        <a href="/luxury-cruise/queen-anne" style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Queen Anne</a>
+                                        <a href="/luxury-cruise/seven-seas-mariner" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seven Seas Mariner</a>
+                                        <a href="/luxury-cruise/seven-seas-voyager" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seven Seas Voyager</a>
+                                        <a href="/luxury-cruise/silversea/silver-dawn" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Dawn</a>
+                                        <a href="/luxury-cruise/silversea/silver-nova" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Nova</a>
+                                        <a href="/luxury-cruise/silver-spirit" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Silver Spirit</a>
+                                        <a href="/luxury-cruise/oceania-marina" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Marina</a>
+                                        <a href="/luxury-cruise/oceania-riviera" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Riviera</a>
+                                        <a href="/luxury-cruise/oceania-vista" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Oceania Vista</a>
+                                        <a href="/luxury-cruise/seabourn-ovation" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Ovation</a>
+                                        <a href="/luxury-cruise/seabourn-quest" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Quest</a>
+                                        <a href="/luxury-cruise/seabourn-encore" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Seabourn Encore</a>
+                                        <a href="/luxury-cruise/queen-anne" style="font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'">Queen Anne</a>
                                     </div>
                                 </div>
                             </div>
