@@ -7669,6 +7669,22 @@
         .carousel-next:hover i {
             color: #c9a961 !important;
         }
+
+        /* ========== LUXURY BLOG CARD HOVER EFFECTS ========== */
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2) !important;
+            border-color: var(--gold) !important;
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .blog-card:hover a {
+            color: #c9a961;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -10340,6 +10356,113 @@
                     }
                 }
             </script>
+        </div>
+    </section>
+
+    <!-- Related Blogs Section -->
+    <section style="background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.9)), url('images/pictorial.png') center center / cover; background-attachment: fixed; padding: 120px 0; overflow: hidden; position: relative;">
+        <!-- Elegant Top Border -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.4;"></div>
+
+        <!-- Decorative Corner Elements -->
+        <div style="position: absolute; top: 40px; left: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.2;"></div>
+        <div style="position: absolute; top: 40px; right: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.2;"></div>
+
+        <div class="max-w-7xl mx-auto" style="padding: 0 24px;">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 80px;">
+                <div style="display: inline-block; padding: 8px 24px; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px); margin-bottom: 20px;">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 3px;">Insights & Stories</span>
+                </div>
+                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(42px, 5.5vw, 58px); font-weight: 600; color: var(--navy); margin-bottom: 20px; line-height: 1.2; letter-spacing: 1px;">Related Blogs</h2>
+                <div style="width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto;"></div>
+            </div>
+
+            <!-- Blog Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;">
+
+                <!-- Blog Card 1 -->
+                <div class="blog-card" style="background: white; border: 2px solid rgba(212, 175, 55, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
+                    <!-- Decorative Corner Accents -->
+                    <div style="position: absolute; top: -1px; left: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.3;"></div>
+                    <div style="position: absolute; top: -1px; right: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.3;"></div>
+
+                    <div style="padding: 6px;">
+                        <!-- Blog Image -->
+                        <div style="position: relative; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.15);">
+                            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=600&h=400&fit=crop" alt="Luxury Cruise Ship" style="width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div style="padding: 32px 24px;">
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.4; min-height: 56px;">Regent Seven Seas & Oceania Cruises to implement New Airwork Casual dress code</h3>
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 16px;"></div>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.7); line-height: 1.8; margin-bottom: 20px;">Our ExperiHire on board seaborn Venture Endless luxury and exceptional service await you...</p>
+                            <a href="#" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                                Read More
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card" style="background: white; border: 2px solid rgba(212, 175, 55, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
+                    <!-- Decorative Corner Accents -->
+                    <div style="position: absolute; top: -1px; left: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.3;"></div>
+                    <div style="position: absolute; top: -1px; right: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.3;"></div>
+
+                    <div style="padding: 6px;">
+                        <!-- Blog Image -->
+                        <div style="position: relative; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.15);">
+                            <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=600&h=400&fit=crop" alt="Cruise Interior" style="width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div style="padding: 32px 24px;">
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.4; min-height: 56px;">Our Experience on Boarding the stunning Emerald Sakara</h3>
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 16px;"></div>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.7); line-height: 1.8; margin-bottom: 20px;">I have just returned from the most incredible sailing experience aboard this magnificent vessel...</p>
+                            <a href="#" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                                Read More
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card" style="background: white; border: 2px solid rgba(212, 175, 55, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
+                    <!-- Decorative Corner Accents -->
+                    <div style="position: absolute; top: -1px; left: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.3;"></div>
+                    <div style="position: absolute; top: -1px; right: -1px; width: 20px; height: 20px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.3;"></div>
+
+                    <div style="padding: 6px;">
+                        <!-- Blog Image -->
+                        <div style="position: relative; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.15);">
+                            <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&h=400&fit=crop" alt="Mediterranean Cruise" style="width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div style="padding: 32px 24px;">
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.4; min-height: 56px;">The top 4 destinations to visit on a luxury cruises in the Mediterranean</h3>
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 16px;"></div>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.7); line-height: 1.8; margin-bottom: 20px;">I have just returned from the most incredible sailing through the stunning Mediterranean ports...</p>
+                            <a href="#" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                                Read More
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
