@@ -15094,55 +15094,194 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 slider.value = slider.max;
             });
 
+            // Reset Order By dropdown
+            const orderBySelect = document.getElementById('orderBySelect');
+            if (orderBySelect) {
+                orderBySelect.selectedIndex = 0;
+            }
+
+            // Reset Solo Cruises dropdown
+            const soloCruises = document.getElementById('soloCruises');
+            if (soloCruises) {
+                soloCruises.selectedIndex = 0;
+            }
+
             console.log('All filters cleared!');
             applyFilters(); // Reapply filters (show all deals)
+        }
+
+        // Extract price from deal card
+        function extractPrice(deal) {
+            // Look for the current price (not the crossed-out one)
+            const priceText = deal.textContent;
+            // Match £4549, £5,709, etc. (the main price, not crossed out)
+            const priceMatch = priceText.match(/£(\d{1,3}(?:,?\d{3})*)/g);
+            if (priceMatch && priceMatch.length >= 2) {
+                // Second match is usually the current price (first is crossed out)
+                const price = priceMatch[1].replace(/[£,]/g, '');
+                return parseInt(price) || 0;
+            }
+            return 0;
+        }
+
+        // Extract duration in nights from deal card
+        function extractDuration(deal) {
+            const durationMatch = deal.textContent.match(/(\d+)\s+Nights?/i);
+            return durationMatch ? parseInt(durationMatch[1]) : 0;
+        }
+
+        // Extract departure date as sortable value
+        function extractDepartureDate(deal) {
+            // Look for patterns like "May 2026", "December 2025", etc.
+            const dateMatch = deal.textContent.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})/i);
+            if (dateMatch) {
+                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const month = monthNames.indexOf(dateMatch[1]);
+                const year = parseInt(dateMatch[2]);
+                return year * 12 + month; // Convert to sortable number
+            }
+            return 999999; // Put deals without dates at the end
+        }
+
+        // Sort deals by selected criteria
+        function sortDeals() {
+            const orderBySelect = document.getElementById('orderBySelect');
+            const sortValue = orderBySelect ? orderBySelect.value : 'date';
+
+            const dealsContainer = document.getElementById('dealsContainer');
+            if (!dealsContainer) return;
+
+            const allDeals = Array.from(document.querySelectorAll('article[data-deal-id]'));
+
+            // Sort based on selected criteria
+            allDeals.sort((a, b) => {
+                switch(sortValue) {
+                    case 'price-low':
+                        return extractPrice(a) - extractPrice(b);
+                    case 'price-high':
+                        return extractPrice(b) - extractPrice(a);
+                    case 'duration-short':
+                        return extractDuration(a) - extractDuration(b);
+                    case 'duration-long':
+                        return extractDuration(b) - extractDuration(a);
+                    case 'date':
+                    default:
+                        return extractDepartureDate(a) - extractDepartureDate(b);
+                }
+            });
+
+            // Reorder DOM elements
+            allDeals.forEach(deal => dealsContainer.appendChild(deal));
+
+            console.log('Deals sorted by:', sortValue);
+
+            // Refresh pagination display
+            showPage(currentPage, false);
         }
 
         // Apply filters to deals
         function applyFilters() {
             const deals = document.querySelectorAll('article[data-deal-id]');
 
-            // Get filter values
+            // Get all filter values
             const departureDateInput = document.querySelector('aside input[type="text"]');
-            const departureDate = departureDateInput ? departureDateInput.value.toLowerCase() : '';
+            const departureDate = departureDateInput ? departureDateInput.value.toLowerCase().trim() : '';
 
-            const departingUK = document.querySelector('aside select')?.value || '';
-            const cruiseType = document.querySelectorAll('aside select')[1]?.value || '';
+            // Get select dropdowns
+            const allSelects = document.querySelectorAll('aside select');
+            const departingUK = allSelects[0]?.value || '';
+            const cruiseType = allSelects[1]?.value || '';
+
+            // Get Solo Cruises filter
+            const soloCruises = document.getElementById('soloCruises')?.value || 'no';
 
             // Get checked duration checkboxes
-            const durationFilters = Array.from(document.querySelectorAll('aside input[type="checkbox"]:checked'))
-                .map(cb => cb.value);
+            const durationCheckboxes = Array.from(document.querySelectorAll('aside input[type="checkbox"]'))
+                .filter(cb => ['1-5', '3-6', '7-9', '10-14', '14-365'].includes(cb.value));
+            const durationFilters = durationCheckboxes.filter(cb => cb.checked).map(cb => cb.value);
 
-            // Get cruise line checkboxes (from the "Cruise Line Filter" section)
-            const cruiseLineCheckboxes = Array.from(
-                document.querySelectorAll('.filter-content input[type="checkbox"]:checked')
-            ).filter(cb => !cb.value.includes('-')); // Filter out duration values
+            // Get cruise line checkboxes
+            const cruiseLineCheckboxes = Array.from(document.querySelectorAll('aside input[type="checkbox"]'))
+                .filter(cb => !['1-5', '3-6', '7-9', '10-14', '14-365'].includes(cb.value) &&
+                              !isNaN(parseInt(cb.value))); // Cruise lines have numeric values
+            const selectedCruiseLines = cruiseLineCheckboxes.filter(cb => cb.checked);
+
+            // Get destination checkboxes (they're in the last filter section)
+            const destinationCheckboxes = Array.from(document.querySelectorAll('.filter-content input[type="checkbox"]'))
+                .filter(cb => !['1-5', '3-6', '7-9', '10-14', '14-365'].includes(cb.value));
+            const selectedDestinations = destinationCheckboxes.filter(cb => cb.checked);
+
+            // Get ship filter values (Select2)
+            let selectedShips = [];
+            if (typeof $ !== 'undefined') {
+                selectedShips = $('#shipFilter').val() || [];
+            }
+
+            let visibleCount = 0;
 
             deals.forEach(deal => {
                 let show = true;
-
-                // Get card content
                 const cardContent = deal.textContent.toLowerCase();
 
-                // Filter by departure date (if entered)
-                if (departureDate && !cardContent.includes(departureDate)) {
-                    show = false;
+                // Filter by departure date
+                if (departureDate) {
+                    // Support different date formats
+                    const datePatterns = [
+                        departureDate,
+                        departureDate.replace(/\//g, '-'),
+                        departureDate.replace(/-/g, ' ')
+                    ];
+                    const hasDateMatch = datePatterns.some(pattern => cardContent.includes(pattern));
+                    if (!hasDateMatch) {
+                        show = false;
+                    }
                 }
 
-                // Filter by duration (if any duration filter is checked)
+                // Filter by Departing UK
+                if (departingUK && departingUK !== '') {
+                    if (departingUK === 'yes') {
+                        if (!cardContent.includes('uk departure')) {
+                            show = false;
+                        }
+                    } else if (departingUK === 'no') {
+                        if (cardContent.includes('uk departure')) {
+                            show = false;
+                        }
+                    }
+                }
+
+                // Filter by Cruise Type
+                if (cruiseType && cruiseType !== 'ocean') {
+                    if (cruiseType === 'river') {
+                        if (!cardContent.includes('river')) {
+                            show = false;
+                        }
+                    } else if (cruiseType === 'both') {
+                        // Show all for 'both' option
+                    }
+                }
+
+                // Filter by Solo Cruises
+                if (soloCruises === 'yes') {
+                    if (!cardContent.includes('solo') && !cardContent.includes('single')) {
+                        show = false;
+                    }
+                }
+
+                // Filter by duration
                 if (durationFilters.length > 0) {
+                    const duration = extractDuration(deal);
                     const hasDurationMatch = durationFilters.some(filter => {
-                        // Extract duration from card (looks for "7 Nights", "10 Nights", etc.)
                         if (filter === '1-5') {
-                            return /[1-5]\s+nights?/i.test(cardContent);
+                            return duration >= 1 && duration <= 5;
                         } else if (filter === '3-6') {
-                            return /[3-6]\s+nights?/i.test(cardContent);
-                        } else if (filter === '7-10') {
-                            return /[7-9]\s+nights?|10\s+nights?/i.test(cardContent);
-                        } else if (filter === '11-14') {
-                            return /1[1-4]\s+nights?/i.test(cardContent);
-                        } else if (filter === '15+') {
-                            return /1[5-9]\s+nights?|[2-9][0-9]\s+nights?/i.test(cardContent);
+                            return duration >= 3 && duration <= 6;
+                        } else if (filter === '7-9') {
+                            return duration >= 7 && duration <= 9;
+                        } else if (filter === '10-14') {
+                            return duration >= 10 && duration <= 14;
+                        } else if (filter === '14-365') {
+                            return duration >= 14;
                         }
                         return false;
                     });
@@ -15152,9 +15291,9 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                     }
                 }
 
-                // Filter by cruise line (if any are checked)
-                if (cruiseLineCheckboxes.length > 0) {
-                    const hasCruiseLineMatch = cruiseLineCheckboxes.some(cb => {
+                // Filter by cruise line
+                if (selectedCruiseLines.length > 0) {
+                    const hasCruiseLineMatch = selectedCruiseLines.some(cb => {
                         const cruiseLine = cb.nextElementSibling?.textContent.toLowerCase() || '';
                         return cardContent.includes(cruiseLine);
                     });
@@ -15164,18 +15303,52 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                     }
                 }
 
+                // Filter by destination
+                if (selectedDestinations.length > 0) {
+                    const hasDestinationMatch = selectedDestinations.some(cb => {
+                        const destination = cb.nextElementSibling?.textContent.toLowerCase() || '';
+                        return cardContent.includes(destination);
+                    });
+
+                    if (!hasDestinationMatch) {
+                        show = false;
+                    }
+                }
+
+                // Filter by ship
+                if (selectedShips.length > 0) {
+                    const hasShipMatch = selectedShips.some(ship => {
+                        const shipName = ship.toLowerCase().replace(/-/g, ' ');
+                        return cardContent.includes(shipName);
+                    });
+
+                    if (!hasShipMatch) {
+                        show = false;
+                    }
+                }
+
                 // Mark deal as filtered or not
                 if (show) {
                     deal.setAttribute('data-filtered', 'false');
                     deal.style.display = ''; // Reset display, let pagination handle it
+                    visibleCount++;
                 } else {
                     deal.setAttribute('data-filtered', 'true');
                     deal.style.display = 'none';
                 }
             });
 
+            // Update entry count
+            const entriesCount = document.getElementById('entriesCount');
+            if (entriesCount) {
+                entriesCount.textContent = visibleCount;
+            }
+
+            console.log('Filters applied. Visible deals:', visibleCount);
+
             // Update pagination after filtering
-            showPage(1); // Go back to first page after filtering
+            // Don't scroll to top when applying filters - stay at current position
+            showPage(1, false); // Go back to first page after filtering
         }
 
         // Add event listeners to all filter inputs
@@ -15202,6 +15375,25 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 textInput.addEventListener('input', function() {
                     clearTimeout(timeout);
                     timeout = setTimeout(applyFilters, 500);
+                });
+            }
+
+            // Add listener to Order By dropdown
+            const orderBySelect = document.getElementById('orderBySelect');
+            if (orderBySelect) {
+                orderBySelect.addEventListener('change', sortDeals);
+            }
+
+            // Add listener to Solo Cruises dropdown
+            const soloCruises = document.getElementById('soloCruises');
+            if (soloCruises) {
+                soloCruises.addEventListener('change', applyFilters);
+            }
+
+            // Add listener to Ship filter (Select2)
+            if (typeof $ !== 'undefined') {
+                $('#shipFilter').on('change', function() {
+                    applyFilters();
                 });
             }
         });
@@ -15272,9 +15464,10 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             return dealsContainer && dealsContainer.classList.contains('grid-view') ? 9 : 10;
         }
 
-        function showPage(pageNum) {
+        function showPage(pageNum, shouldScroll = true) {
             console.log('=== showPage called ===');
             console.log('Page number:', pageNum);
+            console.log('Should scroll:', shouldScroll);
             currentPage = pageNum;
 
             const dealsPerPage = getDealsPerPage();
@@ -15313,8 +15506,11 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             // Update button styles
             updateButtonStyles(pageNum);
 
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Only scroll to top if explicitly requested (pagination clicks)
+            // Don't scroll when filters are applied
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         function updateButtonStyles(activePage) {
@@ -17345,21 +17541,36 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
             var toggle = document.getElementById('priceToggle');
             var isTotal = toggle.checked;
 
-            // Here you would update all price displays
-            // For now, just log the state
             console.log('Price Display Mode:', isTotal ? 'Total Price' : 'Per Person');
 
-            // TODO: Update all price displays in cards based on toggle state
+            // Update the toggle slider appearance
+            const slider = toggle.nextElementSibling;
+            const knob = slider ? slider.nextElementSibling : null;
+
+            if (isTotal) {
+                if (slider) {
+                    slider.style.background = 'linear-gradient(135deg, var(--gold), #c9a84b)';
+                }
+                if (knob) {
+                    knob.style.transform = 'translateX(24px)';
+                }
+            } else {
+                if (slider) {
+                    slider.style.background = 'rgba(212, 165, 116, 0.2)';
+                }
+                if (knob) {
+                    knob.style.transform = 'translateX(0)';
+                }
+            }
+
+            // Note: Actual price conversion would require data attributes on cards
+            // This provides visual feedback that the toggle is working
         }
 
-        // Filter Solo Cruises
+        // Filter Solo Cruises - Now handled by applyFilters()
         function filterSoloCruises() {
-            var checkbox = document.getElementById('soloCruises');
-            var isChecked = checkbox.checked;
-
-            console.log('Solo Cruises Filter:', isChecked ? 'Enabled' : 'Disabled');
-
-            // TODO: Implement solo cruises filtering logic
+            // This is now handled by the applyFilters() function
+            applyFilters();
         }
 
         // Switch to Grid View (3 cards per row - VERTICAL cards)
