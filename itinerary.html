@@ -9762,7 +9762,7 @@
                     </div>
 
                     <!-- Title and Description Below Carousel -->
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 40px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; max-width: 800px; margin: 0 auto;">
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 16px;">Upper Deck Promenade</h3>
                         <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.75); line-height: 1.8;">Our ship features a revolutionary design that maximizes space, comfort, and ocean views. The innovative layout includes multiple outdoor decks, intimate lounges, and spacious public areas that never feel crowded. The grand atrium serves as the heart of the ship, featuring a stunning crystal chandelier and marble staircases.</p>
                     </div>
@@ -9793,7 +9793,7 @@
                             </button>
                         </div>
                     </div>
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 40px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; max-width: 800px; margin: 0 auto;">
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 20px;">The Wine Vault</h3>
                         <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.75); line-height: 1.8;">Our beverage program features an exceptional selection of over 500 wines from prestigious vineyards worldwide. Our expert sommeliers have personally selected each bottle to complement our culinary offerings. The Wine Vault houses rare and vintage selections, while our bars offer premium spirits, craft cocktails, and local specialties from ports of call.</p>
                     </div>
@@ -9824,7 +9824,7 @@
                             </button>
                         </div>
                     </div>
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 40px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; max-width: 800px; margin: 0 auto;">
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 20px;">Owner's Suite</h3>
                         <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.75); line-height: 1.8;">Every stateroom and suite is designed as a sanctuary of comfort and elegance. Our accommodations feature luxury bedding with Egyptian cotton linens, marble bathrooms with premium toiletries, and thoughtful amenities including interactive TVs, refrigerated mini-bars, and complimentary WiFi. Balcony staterooms offer private outdoor spaces to enjoy ocean views and fresh sea breezes.</p>
                     </div>
@@ -9855,7 +9855,7 @@
                             </button>
                         </div>
                     </div>
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 40px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; max-width: 800px; margin: 0 auto;">
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 20px;">Luxury Spa Suites</h3>
                         <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.75); line-height: 1.8;">Our award-winning wellness center offers a sanctuary of tranquility at sea. The spa features treatment rooms offering massages, facials, and body treatments using premium products from renowned brands. Our thermal suite includes aromatic steam rooms, saunas, and hydrotherapy pools with heated ceramic loungers.</p>
                     </div>
@@ -9886,7 +9886,7 @@
                             </button>
                         </div>
                     </div>
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 40px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; max-width: 800px; margin: 0 auto;">
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 20px;">Sunset Cocktail Bar</h3>
                         <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: rgba(10, 25, 41, 0.75); line-height: 1.8;">Experience handcrafted cocktails with premium spirits and fresh ingredients. Our expert mixologists create signature drinks inspired by destinations along your journey. Enjoy complimentary top-shelf spirits, craft cocktails, and local specialties from ports of call throughout your cruise.</p>
                     </div>
@@ -10409,14 +10409,10 @@
                     // Update tab buttons
                     exploreTabs.forEach(t => {
                         if (t === tab) {
-                            t.style.background = 'linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100())';
-                            t.style.color = 'white';
-                            t.style.boxShadow = '0 6px 20px rgba(212, 165, 116, 0.4)';
+                            t.style.cssText = 'background: linear-gradient(135deg, #d4a574 0%, #e8c296 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);';
                             t.classList.add('active');
                         } else {
-                            t.style.background = 'white';
-                            t.style.color = 'var(--navy)';
-                            t.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                            t.style.cssText = 'background: white; color: #0a1929; border: none; padding: 12px 24px; border-radius: 8px; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);';
                             t.classList.remove('active');
                         }
                     });
@@ -10496,6 +10492,9 @@
                 tab.addEventListener('mouseleave', () => {
                     if (!tab.classList.contains('active')) {
                         tab.style.background = 'white';
+                    } else {
+                        // Ensure active tab stays golden
+                        tab.style.background = 'linear-gradient(135deg, #d4a574 0%, #e8c296 100%)';
                     }
                 });
             });
