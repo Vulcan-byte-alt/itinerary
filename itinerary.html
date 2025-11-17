@@ -8341,7 +8341,7 @@
     </script>
 
     <!-- Sticky Action Bar -->
-    <div id="stickyActionBar" style="position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.12); z-index: 200; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 16px 24px;">
+    <div id="stickyActionBar" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); border-top: 1px solid rgba(212, 165, 116, 0.4); box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15); z-index: 200; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 16px 24px;">
         <div class="max-w-7xl mx-auto">
             <div style="display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;">
 
@@ -9246,10 +9246,10 @@
                 </div>
 
                 <!-- Right: Timeline with Toggle Buttons -->
-                <div style="background: linear-gradient(135deg, rgba(10, 25, 41, 0.03) 0%, rgba(212, 165, 116, 0.05) 100%); border-radius: 16px; padding: 32px; border: 1px solid rgba(212, 165, 116, 0.2);">
+                <div style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(40px) saturate(180%) contrast(110%); -webkit-backdrop-filter: blur(40px) saturate(180%) contrast(110%); border-radius: 16px; padding: 32px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 8px 32px rgba(10, 25, 41, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);">
 
                     <!-- Toggle Buttons -->
-                    <div style="display: flex; gap: 8px; margin-bottom: 32px; background: white; padding: 6px; border-radius: 10px; border: 1px solid rgba(212, 165, 116, 0.2);">
+                    <div style="display: flex; gap: 8px; margin-bottom: 32px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 6px; border-radius: 10px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 2px 8px rgba(10, 25, 41, 0.05);">
                         <button id="listViewBtn" style="flex: 1; padding: 10px 20px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">LIST</button>
                         <button id="timelineViewBtn" style="flex: 1; padding: 10px 20px; background: transparent; color: var(--navy); border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">TIMELINE</button>
                     </div>
@@ -9479,6 +9479,50 @@
                     this.style.background = 'transparent';
                 });
             });
+
+            // Timeline / List View Toggle
+            const listViewBtn = document.getElementById('listViewBtn');
+            const timelineViewBtn = document.getElementById('timelineViewBtn');
+            const timelineContainer = document.getElementById('timelineContainer');
+
+            listViewBtn.addEventListener('click', function() {
+                // Switch to list view styling
+                listViewBtn.style.background = 'linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%)';
+                listViewBtn.style.color = 'var(--navy)';
+                timelineViewBtn.style.background = 'transparent';
+                timelineViewBtn.style.color = 'var(--navy)';
+
+                // Update timeline container to list view
+                const portItems = timelineContainer.querySelectorAll('.port-item');
+                portItems.forEach(item => {
+                    item.style.display = 'flex';
+                    item.style.alignItems = 'start';
+                    item.style.gap = '16px';
+                });
+            });
+
+            timelineViewBtn.addEventListener('click', function() {
+                // Switch to timeline view styling
+                timelineViewBtn.style.background = 'linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%)';
+                timelineViewBtn.style.color = 'var(--navy)';
+                listViewBtn.style.background = 'transparent';
+                listViewBtn.style.color = 'var(--navy)';
+
+                // Update timeline container to timeline view (horizontal)
+                const portItems = timelineContainer.querySelectorAll('.port-item');
+                portItems.forEach(item => {
+                    item.style.display = 'flex';
+                    item.style.flexDirection = 'column';
+                    item.style.alignItems = 'center';
+                    item.style.textAlign = 'center';
+                });
+
+                // Update container to horizontal scroll
+                timelineContainer.style.display = 'flex';
+                timelineContainer.style.overflowX = 'auto';
+                timelineContainer.style.gap = '24px';
+                timelineContainer.style.paddingBottom = '16px';
+            });
         });
     </script>
 
@@ -9698,6 +9742,7 @@
         <div class="max-w-7xl mx-auto" style="padding: 0 24px;">
             <!-- Section Header -->
             <div style="text-align: center; margin-bottom: 60px;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">SHIP FEATURES</div>
                 <h2 style="font-family: 'Cinzel', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 500; color: var(--navy); margin-bottom: 16px; line-height: 1.2;">Explore Ships By Day</h2>
             </div>
 
