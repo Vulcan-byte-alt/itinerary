@@ -9893,6 +9893,210 @@
             </div>
     </section>
 
+    <!-- Cruise Holiday Section with Features -->
+    <section id="cruiseHolidaySection" style="background: url('images/pictorial.png') center/cover fixed; padding: 80px 0 60px 0; position: relative; z-index: 1;">
+        <style>
+            .cruise-holiday-section .section-label::before,
+            .cruise-holiday-section .section-label::after {
+                display: none !important;
+            }
+
+            #cruiseHolidayContent {
+                max-height: 400px;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+                position: relative;
+            }
+
+            #cruiseHolidayContent.expanded {
+                max-height: 2000px;
+            }
+
+            #cruiseHolidayContent:not(.expanded)::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: linear-gradient(to bottom, transparent, rgba(249, 247, 244, 0.95));
+                pointer-events: none;
+            }
+
+            #readMoreBtn {
+                margin: 40px auto 0;
+                display: block;
+                padding: 14px 40px;
+                background: linear-gradient(135deg, var(--gold) 0%, #c9a84b 100%);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+                transition: all 0.3s;
+                font-family: 'Cinzel', serif;
+            }
+
+            #readMoreBtn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+            }
+        </style>
+        <div class="max-w-7xl cruise-holiday-section" style="margin: 0 auto; padding: 0 40px; max-width: 1400px;">
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="section-label">Experience Luxury Travel</span>
+                <h2 class="section-title">Cruise Holiday in 2025, 2026 & 2027</h2>
+                <p class="section-desc">Discover extraordinary voyages with Europe's leading luxury cruise specialist</p>
+            </div>
+
+            <!-- Expandable Content -->
+            <div id="cruiseHolidayContent">
+                <!-- Content Grid: Text Left, Image Right -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 80px;">
+                    <!-- Left: Text Content in Glass Container -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 40px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8); height: fit-content;">
+                        <p style="font-size: 16px; line-height: 1.8; color: #333333; margin-bottom: 24px;">
+                            SixStarCruises are Europe's Leading Luxury Cruise Specialist, offering luxury voyages that take you across the world with the finest cruise lines.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #333333; margin-bottom: 24px;">
+                            We're the ultra-luxury cruise experts for a reason; we have over 100 years' combined experience in the cruise industry and have been on board more cruise ships than any other agency.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #333333; margin-bottom: 0;">
+                            As the preferred partner of many luxury cruise lines, you can enjoy access to our exclusive offers. From your first call to the moment you return home, we guarantee a six-star service that ensures every detail of your journey is organised to perfection.
+                        </p>
+                    </div>
+
+                    <!-- Right: Image -->
+                    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); aspect-ratio: 1.5/1;">
+                        <img src="images/about.png" alt="Luxury Cruise Experience" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                </div>
+
+                <!-- Feature Cards in Glassmorphism -->
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; max-width: 1400px; margin: 0 auto;">
+
+                    <!-- Best Price Guarantee -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(255, 255, 255, 0.9)'; this.style.boxShadow='0 16px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.75)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)'">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15)); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+                            BEST PRICE<br>GUARANTEE
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #555555; font-family: 'Inter', sans-serif; font-weight: 300;">
+                            Lowest fares guaranteed
+                        </p>
+                    </div>
+
+                    <!-- ABTA & ATOL Protection -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(255, 255, 255, 0.9)'; this.style.boxShadow='0 16px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.75)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)'">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15)); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+                            ABTA & ATOL<br>PROTECTION
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #555555; font-family: 'Inter', sans-serif; font-weight: 300;">
+                            Complete financial protection
+                        </p>
+                    </div>
+
+                    <!-- Personal Concierge -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(255, 255, 255, 0.9)'; this.style.boxShadow='0 16px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.75)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)'">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15)); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+                            PERSONAL<br>CONCIERGE
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #555555; font-family: 'Inter', sans-serif; font-weight: 300;">
+                            Dedicated cruise specialist
+                        </p>
+                    </div>
+
+                    <!-- Expert Advice -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(255, 255, 255, 0.9)'; this.style.boxShadow='0 16px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.75)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)'">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15)); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+                            EXPERT<br>ADVICE
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #555555; font-family: 'Inter', sans-serif; font-weight: 300;">
+                            100+ years combined expertise
+                        </p>
+                    </div>
+
+                    <!-- 24-Hour Customer Care -->
+                    <div style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border: 1px solid rgba(10, 25, 41, 0.08); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(255, 255, 255, 0.9)'; this.style.boxShadow='0 16px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.75)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)'">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15)); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+                            24-HOUR<br>CUSTOMER CARE
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #555555; font-family: 'Inter', sans-serif; font-weight: 300;">
+                            Round-the-clock support
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Read More Button -->
+            <button id="readMoreBtn" onclick="toggleCruiseHoliday()">
+                <span id="readMoreText">Read More</span>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        function toggleCruiseHoliday() {
+            const content = document.getElementById('cruiseHolidayContent');
+            const btn = document.getElementById('readMoreBtn');
+            const btnText = document.getElementById('readMoreText');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btnText.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                btnText.textContent = 'Read Less';
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
