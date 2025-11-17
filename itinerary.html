@@ -7622,6 +7622,53 @@
                 min-height: 600px;
             }
         }
+
+        /* ========== LUXURY HOVER EFFECTS FOR EXPLORE TABS ========== */
+        .explore-tab:hover {
+            background: rgba(255, 255, 255, 1) !important;
+            border-color: var(--gold) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25) !important;
+        }
+
+        .explore-tab.active:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
+        }
+
+        /* ========== LUXURY HOVER EFFECTS FOR DAY CARDS ========== */
+        .day-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25) !important;
+            border-color: var(--gold) !important;
+        }
+
+        .day-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .day-card:hover .day-overlay {
+            opacity: 0;
+        }
+
+        .day-card:hover .day-description {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ========== LUXURY CAROUSEL BUTTON HOVER EFFECTS ========== */
+        .carousel-prev:hover,
+        .carousel-next:hover {
+            background: linear-gradient(135deg, #1a3a52 0%, var(--navy) 100%) !important;
+            border-color: #c9a961 !important;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+        }
+
+        .carousel-prev:hover i,
+        .carousel-next:hover i {
+            color: #c9a961 !important;
+        }
     </style>
 </head>
 
@@ -9092,110 +9139,140 @@
             <!-- End Itinerary Tab -->
 
     <!-- SECTION 1: Visual Day-by-Day Itinerary -->
-    <section class="promo-section" style="background: url('images/promo-bg.png') center center / cover; background-attachment: fixed; padding: 100px 0; overflow: hidden; position: relative;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.25;"></div>
+    <section class="promo-section" style="background: linear-gradient(rgba(245, 245, 245, 0.5), rgba(255, 255, 255, 0.7)), url('images/pictorial.png') center center / cover; background-attachment: fixed; padding: 120px 0; overflow: hidden; position: relative;">
+        <!-- Elegant Top Border -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.5;"></div>
+
+        <!-- Decorative Corner Elements -->
+        <div style="position: absolute; top: 40px; left: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.3;"></div>
+        <div style="position: absolute; top: 40px; right: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.3;"></div>
 
         <div class="max-w-7xl mx-auto" style="padding: 0 24px;">
 
-            <!-- Section Header -->
-            <div style="text-align: center; margin-bottom: 60px;">
-                <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">VISUAL ITINERARY</div>
-                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 500; color: var(--navy); margin-bottom: 16px; line-height: 1.2;">Your Journey Awaits</h2>
-                <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.7); max-width: 700px; margin: 0 auto; line-height: 1.6;">Explore each destination along your transatlantic voyage</p>
+            <!-- Luxury Section Header -->
+            <div style="text-align: center; margin-bottom: 80px;">
+                <div style="display: inline-block; padding: 10px 32px; background: rgba(255, 255, 255, 0.95); border: 1.5px solid rgba(212, 175, 55, 0.4); backdrop-filter: blur(15px); margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 3px;">Curated Itinerary</span>
+                </div>
+                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(42px, 5.5vw, 58px); font-weight: 600; color: var(--navy); margin-bottom: 24px; line-height: 1.2; letter-spacing: 1px;">Your Journey Awaits</h2>
+                <div style="width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 24px;"></div>
+                <p style="font-family: 'Lato', sans-serif; font-size: 17px; color: rgba(10, 25, 41, 0.7); max-width: 700px; margin: 0 auto; line-height: 1.9;">Embark on an extraordinary voyage through the world's most captivating destinations</p>
             </div>
 
-            <!-- Horizontal Progress Timeline -->
-            <div style="position: relative; max-width: 1000px; margin: 0 auto 60px;">
+            <!-- Luxury Horizontal Progress Timeline -->
+            <div style="position: relative; max-width: 1100px; margin: 0 auto 80px; background: rgba(255, 255, 255, 0.7); padding: 50px 40px; border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); backdrop-filter: blur(10px);">
+                <!-- Decorative Corner Accents -->
+                <div style="position: absolute; top: -1px; left: -1px; width: 25px; height: 25px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold);"></div>
+                <div style="position: absolute; top: -1px; right: -1px; width: 25px; height: 25px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold);"></div>
+                <div style="position: absolute; bottom: -1px; left: -1px; width: 25px; height: 25px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold);"></div>
+                <div style="position: absolute; bottom: -1px; right: -1px; width: 25px; height: 25px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold);"></div>
+
                 <!-- Progress Line -->
-                <div style="position: absolute; top: 12px; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold) 0%, var(--gold) 100%); z-index: 0;"></div>
+                <div style="position: absolute; top: 62px; left: 100px; right: 100px; height: 3px; background: linear-gradient(to right, var(--gold) 0%, #c9a961 100%); z-index: 0; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);"></div>
 
                 <!-- Day Markers -->
-                <div style="display: flex; justify-content: space-between; position: relative; z-index: 1;">
+                <div style="display: flex; justify-content: space-between; position: relative; z-index: 1; padding: 0 40px;">
                     <!-- Day 1 -->
                     <div style="text-align: center; flex: 1;">
-                        <div style="width: 24px; height: 24px; background: var(--gold); border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"></div>
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(10, 25, 41, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Day 1</div>
-                        <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--navy);">Barcelona</div>
+                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); border-radius: 50%; margin: 0 auto 20px; border: 5px solid white; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);"></div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Day 1</div>
+                        <div style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy);">Barcelona</div>
                     </div>
 
                     <!-- Day 2 -->
                     <div style="text-align: center; flex: 1;">
-                        <div style="width: 24px; height: 24px; background: var(--gold); border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"></div>
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(10, 25, 41, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Day 2</div>
-                        <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--navy);">Cruising The<br>Mediterranean Sea</div>
+                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); border-radius: 50%; margin: 0 auto 20px; border: 5px solid white; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);"></div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Day 2</div>
+                        <div style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy); line-height: 1.4;">Cruising The<br>Mediterranean</div>
                     </div>
 
                     <!-- Day 3 -->
                     <div style="text-align: center; flex: 1;">
-                        <div style="width: 24px; height: 24px; background: var(--gold); border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"></div>
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(10, 25, 41, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Day 3</div>
-                        <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--navy);">Málaga</div>
+                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); border-radius: 50%; margin: 0 auto 20px; border: 5px solid white; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);"></div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Day 3</div>
+                        <div style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy);">Málaga</div>
                     </div>
 
                     <!-- Day 4 -->
                     <div style="text-align: center; flex: 1;">
-                        <div style="width: 24px; height: 24px; background: var(--gold); border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"></div>
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(10, 25, 41, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Day 4</div>
-                        <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--navy);">Sailing The<br>Atlantic Ocean</div>
+                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); border-radius: 50%; margin: 0 auto 20px; border: 5px solid white; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);"></div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Day 4</div>
+                        <div style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy); line-height: 1.4;">Sailing The<br>Atlantic</div>
                     </div>
 
                     <!-- Day 5 -->
                     <div style="text-align: center; flex: 1;">
-                        <div style="width: 24px; height: 24px; background: var(--gold); border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"></div>
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(10, 25, 41, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Day 5</div>
-                        <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--navy);">Funchal, Madeira</div>
+                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); border-radius: 50%; margin: 0 auto 20px; border: 5px solid white; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);"></div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Day 5</div>
+                        <div style="font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy);">Funchal</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Image Gallery - All in One Row -->
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+            <!-- Luxury Image Gallery -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;">
 
                 <!-- Day 1: Barcelona -->
-                <div class="day-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
-                    <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=350&fit=crop" alt="Barcelona" style="width: 100%; height: 280px; object-fit: cover; display: block;">
-                    <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.85) 0%, transparent 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; opacity: 1; transition: opacity 0.3s ease;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin: 0;">Barcelona</h3>
-                    </div>
-                    <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 25, 41, 0.95); backdrop-filter: blur(10px); padding: 20px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px;">Barcelona</h3>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Embark on your luxury journey from vibrant Barcelona. Explore Gaudí's masterpieces.</p>
+                <div class="day-card" style="position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 3px solid rgba(212, 175, 55, 0.3); background: white; padding: 4px;">
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=350&fit=crop" alt="Barcelona" style="width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 1; transition: opacity 0.4s ease;">
+                            <div style="width: 30px; height: 2px; background: var(--gold); margin-bottom: 10px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin: 0; letter-spacing: 0.5px;">Barcelona</h3>
+                        </div>
+                        <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.97) 0%, rgba(10, 25, 41, 0.95) 100%); backdrop-filter: blur(12px); padding: 24px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;">
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 12px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin-bottom: 12px; letter-spacing: 0.5px;">Barcelona</h3>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">Embark on your luxury journey from vibrant Barcelona. Explore Gaudí's architectural masterpieces.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Day 2: Mediterranean Sea -->
-                <div class="day-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
-                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=350&fit=crop" alt="Mediterranean Sea" style="width: 100%; height: 280px; object-fit: cover; display: block;">
-                    <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.85) 0%, transparent 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; opacity: 1; transition: opacity 0.3s ease;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin: 0;">Mediterranean</h3>
-                    </div>
-                    <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 25, 41, 0.95); backdrop-filter: blur(10px); padding: 20px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px;">Mediterranean Sea</h3>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Relax as you sail through crystal-clear Mediterranean waters.</p>
+                <div class="day-card" style="position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 3px solid rgba(212, 175, 55, 0.3); background: white; padding: 4px;">
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=350&fit=crop" alt="Mediterranean Sea" style="width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 1; transition: opacity 0.4s ease;">
+                            <div style="width: 30px; height: 2px; background: var(--gold); margin-bottom: 10px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin: 0; letter-spacing: 0.5px;">Mediterranean</h3>
+                        </div>
+                        <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.97) 0%, rgba(10, 25, 41, 0.95) 100%); backdrop-filter: blur(12px); padding: 24px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;">
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 12px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin-bottom: 12px; letter-spacing: 0.5px;">Mediterranean</h3>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">Relax as you sail through the pristine waters of the Mediterranean.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Day 3: Málaga -->
-                <div class="day-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
-                    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=350&fit=crop" alt="Málaga" style="width: 100%; height: 280px; object-fit: cover; display: block;">
-                    <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.85) 0%, transparent 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; opacity: 1; transition: opacity 0.3s ease;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin: 0;">Málaga</h3>
-                    </div>
-                    <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 25, 41, 0.95); backdrop-filter: blur(10px); padding: 20px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px;">Málaga</h3>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Discover Picasso's birthplace. Explore the Alcazaba fortress.</p>
+                <div class="day-card" style="position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 3px solid rgba(212, 175, 55, 0.3); background: white; padding: 4px;">
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=350&fit=crop" alt="Málaga" style="width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 1; transition: opacity 0.4s ease;">
+                            <div style="width: 30px; height: 2px; background: var(--gold); margin-bottom: 10px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin: 0; letter-spacing: 0.5px;">Málaga</h3>
+                        </div>
+                        <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.97) 0%, rgba(10, 25, 41, 0.95) 100%); backdrop-filter: blur(12px); padding: 24px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;">
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 12px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin-bottom: 12px; letter-spacing: 0.5px;">Málaga</h3>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">Discover Picasso's birthplace and explore the historic Alcazaba fortress.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Day 4: Atlantic Ocean -->
-                <div class="day-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
-                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=350&fit=crop" alt="Atlantic Ocean" style="width: 100%; height: 280px; object-fit: cover; display: block;">
-                    <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.85) 0%, transparent 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; opacity: 1; transition: opacity 0.3s ease;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin: 0;">Atlantic Ocean</h3>
-                    </div>
-                    <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 25, 41, 0.95); backdrop-filter: blur(10px); padding: 20px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px;">Atlantic Ocean</h3>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Experience the open Atlantic. Indulge in spa treatments.</p>
+                <div class="day-card" style="position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 3px solid rgba(212, 175, 55, 0.3); background: white; padding: 4px;">
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=350&fit=crop" alt="Atlantic Ocean" style="width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div class="day-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 1; transition: opacity 0.4s ease;">
+                            <div style="width: 30px; height: 2px; background: var(--gold); margin-bottom: 10px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin: 0; letter-spacing: 0.5px;">Atlantic Ocean</h3>
+                        </div>
+                        <div class="day-description" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 25, 41, 0.97) 0%, rgba(10, 25, 41, 0.95) 100%); backdrop-filter: blur(12px); padding: 24px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;">
+                            <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 12px;"></div>
+                            <h3 style="font-family: 'Cinzel', serif; font-size: 19px; font-weight: 600; color: white; margin-bottom: 12px; letter-spacing: 0.5px;">Atlantic Ocean</h3>
+                            <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">Enjoy world-class amenities as you cross the majestic Atlantic.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -9692,77 +9769,98 @@
     </section>
 
     <!-- SECTION: Explore Ships By Day -->
-    <section style="background: url('images/promo-bg.png') center center / cover; background-attachment: fixed; padding: 100px 0; overflow: hidden; position: relative;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.25;"></div>
+    <section style="background: linear-gradient(rgba(245, 245, 245, 0.6), rgba(255, 255, 255, 0.8)), url('images/pictorial.png') center center / cover; background-attachment: fixed; padding: 120px 0; overflow: hidden; position: relative;">
+        <!-- Elegant Top Border -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.4;"></div>
+
+        <!-- Decorative Corner Elements -->
+        <div style="position: absolute; top: 40px; left: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.2;"></div>
+        <div style="position: absolute; top: 40px; right: 40px; width: 60px; height: 60px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); opacity: 0.2;"></div>
 
         <div class="max-w-7xl mx-auto" style="padding: 0 24px;">
-            <!-- Section Header -->
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2;">Explore Ships By Day</h2>
+            <!-- Luxury Section Header -->
+            <div style="text-align: center; margin-bottom: 80px;">
+                <div style="display: inline-block; padding: 8px 24px; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px); margin-bottom: 20px;">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 3px;">Experience Excellence</span>
+                </div>
+                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(42px, 5.5vw, 58px); font-weight: 600; color: var(--navy); margin-bottom: 20px; line-height: 1.2; letter-spacing: 1px;">Explore Ships By Day</h2>
+                <p style="font-family: 'Lato', sans-serif; font-size: 17px; color: rgba(10, 25, 41, 0.7); max-width: 650px; margin: 0 auto; line-height: 1.8;">Discover the unparalleled luxury and sophistication aboard our meticulously designed vessels</p>
             </div>
 
-            <!-- Category Tabs -->
-            <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 48px;">
-                <button class="explore-tab" data-category="premium-cabins" style="background: white; color: var(--navy); border: none; padding: 12px 24px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease;">
+            <!-- Luxury Category Tabs -->
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 60px;">
+                <button class="explore-tab" data-category="premium-cabins" style="background: rgba(255, 255, 255, 0.95); color: var(--navy); border: 1.5px solid rgba(212, 175, 55, 0.3); padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
                     Premium Cabins
                 </button>
-                <button class="explore-tab" data-category="wine-bars" style="background: white; color: var(--navy); border: none; padding: 12px 24px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease;">
-                    Wine/Cocktail Views
+                <button class="explore-tab" data-category="wine-bars" style="background: rgba(255, 255, 255, 0.95); color: var(--navy); border: 1.5px solid rgba(212, 175, 55, 0.3); padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    Wine & Cocktail Views
                 </button>
-                <button class="explore-tab active" data-category="ship-layout" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: white; border: none; padding: 12px 24px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease;">
+                <button class="explore-tab active" data-category="ship-layout" style="background: linear-gradient(135deg, var(--gold) 0%, #c9a961 100%); color: white; border: 1.5px solid var(--gold); padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);">
                     Ship Configuration & Layout
                 </button>
-                <button class="explore-tab" data-category="wellness" style="background: white; color: var(--navy); border: none; padding: 12px 24px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease;">
-                    Health and Fitness Center
+                <button class="explore-tab" data-category="wellness" style="background: rgba(255, 255, 255, 0.95); color: var(--navy); border: 1.5px solid rgba(212, 175, 55, 0.3); padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    Health & Wellness Center
                 </button>
-                <button class="explore-tab" data-category="premium-bars" style="background: white; color: var(--navy); border: none; padding: 12px 24px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease;">
+                <button class="explore-tab" data-category="premium-bars" style="background: rgba(255, 255, 255, 0.95); color: var(--navy); border: 1.5px solid rgba(212, 175, 55, 0.3); padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
                     Premium Bars
                 </button>
             </div>
 
-            <!-- Content Container -->
-            <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Luxury Content Container -->
+            <div style="max-width: 1000px; margin: 0 auto; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); padding: 50px 40px; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); position: relative;">
+                <!-- Decorative Corner Accents -->
+                <div style="position: absolute; top: -1px; left: -1px; width: 30px; height: 30px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold);"></div>
+                <div style="position: absolute; top: -1px; right: -1px; width: 30px; height: 30px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold);"></div>
+                <div style="position: absolute; bottom: -1px; left: -1px; width: 30px; height: 30px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold);"></div>
+                <div style="position: absolute; bottom: -1px; right: -1px; width: 30px; height: 30px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold);"></div>
 
                 <!-- Ship Configuration & Layout (Active by default) -->
                 <div class="explore-content active" data-content="ship-layout">
-                    <!-- 3-Image Carousel -->
-                    <div style="position: relative; margin-bottom: 40px;">
+                    <!-- Luxury 3-Image Carousel -->
+                    <div style="position: relative; margin-bottom: 50px;">
                         <!-- Carousel Container -->
-                        <div style="display: flex; align-items: center; gap: 20px; position: relative;">
-                            <!-- Previous Arrow -->
-                            <button class="carousel-prev" data-carousel="ship-layout" style="background: rgba(10, 25, 41, 0.8); border: none; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; z-index: 10; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <i class="fas fa-chevron-left" style="color: white; font-size: 18px;"></i>
+                        <div style="display: flex; align-items: center; gap: 24px; position: relative;">
+                            <!-- Elegant Previous Arrow -->
+                            <button class="carousel-prev" data-carousel="ship-layout" style="background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%); border: 1.5px solid var(--gold); width: 54px; height: 54px; border-radius: 50%; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 16px rgba(10, 25, 41, 0.3);">
+                                <i class="fas fa-chevron-left" style="color: var(--gold); font-size: 18px;"></i>
                             </button>
 
-                            <!-- 3 Images Display -->
-                            <div style="flex: 1; overflow: hidden; border-radius: 12px;">
-                                <div class="carousel-track" data-carousel="ship-layout" style="display: flex; gap: 16px; transition: transform 0.5s ease;">
+                            <!-- 3 Images Display with Enhanced Styling -->
+                            <div style="flex: 1; overflow: hidden; border-radius: 0;">
+                                <div class="carousel-track" data-carousel="ship-layout" style="display: flex; gap: 20px; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
                                     <!-- Image 1 -->
-                                    <div class="carousel-item" style="flex: 0 0 30%; opacity: 0.5; transition: all 0.3s ease;">
-                                        <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=400&h=300&fit=crop" alt="Pool Deck" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+                                    <div class="carousel-item" style="flex: 0 0 30%; opacity: 0.6; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative;">
+                                        <div style="border: 2px solid rgba(212, 175, 55, 0.3); padding: 6px; background: white;">
+                                            <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=400&h=300&fit=crop" alt="Pool Deck" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                                        </div>
                                     </div>
                                     <!-- Image 2 (Center/Active) -->
-                                    <div class="carousel-item active" style="flex: 0 0 40%; opacity: 1; transition: all 0.3s ease; transform: scale(1.1);">
-                                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop" alt="Ship Deck" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);">
+                                    <div class="carousel-item active" style="flex: 0 0 40%; opacity: 1; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(1.05); position: relative;">
+                                        <div style="border: 3px solid var(--gold); padding: 8px; background: white; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);">
+                                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop" alt="Ship Deck" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                                        </div>
                                     </div>
                                     <!-- Image 3 -->
-                                    <div class="carousel-item" style="flex: 0 0 30%; opacity: 0.5; transition: all 0.3s ease;">
-                                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&h=300&fit=crop" alt="Grand Atrium" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+                                    <div class="carousel-item" style="flex: 0 0 30%; opacity: 0.6; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative;">
+                                        <div style="border: 2px solid rgba(212, 175, 55, 0.3); padding: 6px; background: white;">
+                                            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&h=300&fit=crop" alt="Grand Atrium" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Next Arrow -->
-                            <button class="carousel-next" data-carousel="ship-layout" style="background: rgba(10, 25, 41, 0.8); border: none; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; z-index: 10; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <i class="fas fa-chevron-right" style="color: white; font-size: 18px;"></i>
+                            <!-- Elegant Next Arrow -->
+                            <button class="carousel-next" data-carousel="ship-layout" style="background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%); border: 1.5px solid var(--gold); width: 54px; height: 54px; border-radius: 50%; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 16px rgba(10, 25, 41, 0.3);">
+                                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 18px;"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Title and Description Below Carousel -->
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                        <h3 style="font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--gold); margin-bottom: 20px;">Upper Deck Promenade</h3>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 15px; color: rgba(10, 25, 41, 0.8); line-height: 1.8; text-align: justify;">Our ship features a revolutionary design that maximizes space, comfort, and ocean views. The innovative layout includes multiple outdoor decks, intimate lounges, and spacious public areas that never feel crowded. The grand atrium serves as the heart of the ship, featuring a stunning crystal chandelier and marble staircases. Our resort-style pool deck offers multiple pools, hot tubs, and private cabanas.</p>
+                    <!-- Refined Title and Description -->
+                    <div style="text-align: center; max-width: 820px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 600; color: var(--navy); margin-bottom: 24px; letter-spacing: 0.5px;">Upper Deck Promenade</h3>
+                        <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 24px;"></div>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.9; text-align: center;">Our ship features a revolutionary design that maximizes space, comfort, and ocean views. The innovative layout includes multiple outdoor decks, intimate lounges, and spacious public areas that never feel crowded. The grand atrium serves as the heart of the ship, featuring a stunning crystal chandelier and marble staircases.</p>
                     </div>
                 </div>
 
