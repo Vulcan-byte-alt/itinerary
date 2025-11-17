@@ -9691,6 +9691,255 @@
         </div>
     </section>
 
+    <!-- SECTION: Explore Ship & Cabins -->
+    <section style="background: linear-gradient(to bottom, #f9f7f4 0%, #ffffff 100%); padding: 100px 0; overflow: hidden; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); opacity: 0.25;"></div>
+
+        <div class="max-w-7xl mx-auto" style="padding: 0 24px;">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">EXPLORE YOUR SHIP</div>
+                <h2 style="font-family: 'Cinzel', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2;">Discover Ship & Cabins</h2>
+                <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.7); max-width: 700px; margin: 0 auto; line-height: 1.6;">Immerse yourself in luxury with our world-class amenities, gourmet dining, and premium accommodations</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 48px;">
+                <button class="explore-tab active" data-category="specialty-dining" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3);">
+                    Specialty Dining
+                </button>
+                <button class="explore-tab" data-category="wine-bars" style="background: transparent; color: var(--navy); border: 2px solid rgba(212, 165, 116, 0.3); padding: 14px 28px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                    Wine Selection & Bars
+                </button>
+                <button class="explore-tab" data-category="ship-layout" style="background: transparent; color: var(--navy); border: 2px solid rgba(212, 165, 116, 0.3); padding: 14px 28px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                    Ship Configuration & Layout
+                </button>
+                <button class="explore-tab" data-category="wellness" style="background: transparent; color: var(--navy); border: 2px solid rgba(212, 165, 116, 0.3); padding: 14px 28px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                    Health and Wellness Center
+                </button>
+                <button class="explore-tab" data-category="premium-cabins" style="background: transparent; color: var(--navy); border: 2px solid rgba(212, 165, 116, 0.3); padding: 14px 28px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                    Premium Cabins
+                </button>
+            </div>
+
+            <!-- Content Container -->
+            <div style="position: relative;">
+
+                <!-- Specialty Dining Content -->
+                <div class="explore-content active" data-content="specialty-dining">
+                    <!-- Image Carousel -->
+                    <div style="position: relative; margin-bottom: 40px;">
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                            <!-- Carousel Track -->
+                            <div class="carousel-track" data-carousel="specialty-dining" style="display: flex; transition: transform 0.5s ease;">
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=600&fit=crop" alt="Fine Dining Restaurant" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">The Grand Dining Room</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Experience world-class cuisine in an elegant atmosphere with panoramic ocean views</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&h=600&fit=crop" alt="Asian Fusion Restaurant" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Pacific Rim</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Savor authentic Asian fusion cuisine prepared by master chefs</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&h=600&fit=crop" alt="Italian Restaurant" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Tuscan Trattoria</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Authentic Italian cuisine with hand-made pasta and wood-fired pizzas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-prev" data-carousel="specialty-dining" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-left" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                            <button class="carousel-next" data-carousel="specialty-dining" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-right" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Why This Matters Section -->
+                    <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(212, 165, 116, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">Why Our Dining Experience Stands Out</h3>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.8; text-align: justify;">Our specialty dining venues offer an unparalleled culinary journey across the globe. Each restaurant features menus crafted by award-winning chefs using the finest ingredients sourced from around the world. From authentic Italian trattorias to contemporary Asian fusion, every meal is a masterpiece. Our sommeliers have curated an extensive wine collection featuring over 500 labels from premier vineyards. Whether you prefer intimate dining for two or a celebration with friends, our restaurants provide the perfect ambiance for every occasion. All specialty dining is included in your cruise fare, with no additional charges or reservations required.</p>
+                    </div>
+                </div>
+
+                <!-- Wine Selection & Bars Content -->
+                <div class="explore-content" data-content="wine-bars" style="display: none;">
+                    <div style="position: relative; margin-bottom: 40px;">
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                            <div class="carousel-track" data-carousel="wine-bars" style="display: flex; transition: transform 0.5s ease;">
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1200&h=600&fit=crop" alt="Wine Cellar" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">The Wine Vault</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Discover rare vintages in our temperature-controlled wine cellar</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&h=600&fit=crop" alt="Champagne Bar" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Champagne Lounge</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Premium champagnes and sparkling wines from renowned houses</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&h=600&fit=crop" alt="Cocktail Bar" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Sunset Cocktail Bar</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Handcrafted cocktails with premium spirits and fresh ingredients</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-prev" data-carousel="wine-bars" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-left" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                            <button class="carousel-next" data-carousel="wine-bars" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-right" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(212, 165, 116, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">World-Class Wine & Spirits Collection</h3>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.8; text-align: justify;">Our beverage program features an exceptional selection of over 500 wines from prestigious vineyards worldwide. Our expert sommeliers have personally selected each bottle to complement our culinary offerings. The Wine Vault houses rare and vintage selections, while our bars offer premium spirits, craft cocktails, and local specialties from ports of call. Enjoy complimentary wines, beers, and spirits throughout the ship, including top-shelf brands. Our Champagne Lounge serves prestigious houses like Dom Pérignon and Cristal. Daily wine tastings and pairing dinners allow you to expand your knowledge while savoring exceptional vintages.</p>
+                    </div>
+                </div>
+
+                <!-- Ship Configuration & Layout Content -->
+                <div class="explore-content" data-content="ship-layout" style="display: none;">
+                    <div style="position: relative; margin-bottom: 40px;">
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                            <div class="carousel-track" data-carousel="ship-layout" style="display: flex; transition: transform 0.5s ease;">
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop" alt="Ship Deck Overview" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Upper Deck Promenade</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Spacious open decks with panoramic ocean views and luxury loungers</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&h=600&fit=crop" alt="Grand Atrium" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Grand Atrium</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Stunning multi-story atrium with elegant chandelier and marble finishes</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=1200&h=600&fit=crop" alt="Pool Deck" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Pool & Aqua Deck</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Resort-style pools, hot tubs, and poolside service</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-prev" data-carousel="ship-layout" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-left" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                            <button class="carousel-next" data-carousel="ship-layout" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-right" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(212, 165, 116, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">Thoughtfully Designed Spaces</h3>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.8; text-align: justify;">Our ship features a revolutionary design that maximizes space, comfort, and ocean views. The innovative layout includes multiple outdoor decks, intimate lounges, and spacious public areas that never feel crowded. The grand atrium serves as the heart of the ship, featuring a stunning crystal chandelier and marble staircases. Our resort-style pool deck offers multiple pools, hot tubs, and private cabanas. The promenade deck provides a scenic walking path with panoramic views. Every space has been meticulously designed to create an atmosphere of refined elegance while maintaining the warmth and intimacy of a boutique hotel. State-of-the-art stabilization technology ensures smooth sailing in all conditions.</p>
+                    </div>
+                </div>
+
+                <!-- Health and Wellness Center Content -->
+                <div class="explore-content" data-content="wellness" style="display: none;">
+                    <div style="position: relative; margin-bottom: 40px;">
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                            <div class="carousel-track" data-carousel="wellness" style="display: flex; transition: transform 0.5s ease;">
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&h=600&fit=crop" alt="Spa Treatment Room" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Luxury Spa Suites</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Indulge in rejuvenating treatments inspired by global wellness traditions</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&h=600&fit=crop" alt="Fitness Center" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">State-of-the-Art Fitness Center</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Premium equipment with panoramic ocean views and personal training</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&h=600&fit=crop" alt="Thermal Suite" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Thermal Suite & Sauna</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Hydrotherapy pools, aromatic steam rooms, and relaxation lounges</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-prev" data-carousel="wellness" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-left" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                            <button class="carousel-next" data-carousel="wellness" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-right" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(212, 165, 116, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">Holistic Wellness at Sea</h3>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.8; text-align: justify;">Our award-winning wellness center offers a sanctuary of tranquility at sea. The spa features treatment rooms offering massages, facials, and body treatments using premium products from renowned brands. Our thermal suite includes aromatic steam rooms, saunas, and hydrotherapy pools with heated ceramic loungers. The fitness center is equipped with the latest Technogym equipment, free weights, and offers yoga, Pilates, and meditation classes with certified instructors. Personal training sessions are available to help you maintain your fitness routine. The spa terrace provides private relaxation areas with ocean views. Complimentary fitness classes include sunrise yoga, spinning, and aqua aerobics. Beauty salon services include hair styling, manicures, and pedicures.</p>
+                    </div>
+                </div>
+
+                <!-- Premium Cabins Content -->
+                <div class="explore-content" data-content="premium-cabins" style="display: none;">
+                    <div style="position: relative; margin-bottom: 40px;">
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                            <div class="carousel-track" data-carousel="premium-cabins" style="display: flex; transition: transform 0.5s ease;">
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=600&fit=crop" alt="Owner's Suite" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Owner's Suite</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Expansive two-bedroom suite with wraparound balcony and butler service</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=600&fit=crop" alt="Penthouse Suite" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Penthouse Veranda Suite</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Luxurious suite with separate living area and private veranda</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=600&fit=crop" alt="Deluxe Balcony" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 25, 41, 0.95) 0%, transparent 100%); padding: 40px;">
+                                        <h3 style="font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px;">Deluxe Balcony Stateroom</h3>
+                                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px;">Spacious accommodations with floor-to-ceiling windows and private balcony</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-prev" data-carousel="premium-cabins" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-left" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                            <button class="carousel-next" data-carousel="premium-cabins" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: none; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chevron-right" style="color: var(--navy); font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(212, 165, 116, 0.2);">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">Your Home Away From Home</h3>
+                        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: rgba(10, 25, 41, 0.75); line-height: 1.8; text-align: justify;">Every stateroom and suite is designed as a sanctuary of comfort and elegance. Our accommodations feature luxury bedding with Egyptian cotton linens, marble bathrooms with premium toiletries, and thoughtful amenities including interactive TVs, refrigerated mini-bars, and complimentary WiFi. Balcony staterooms offer private outdoor spaces to enjoy ocean views and fresh sea breezes. Suites include separate living areas, walk-in closets, and upgraded amenities such as Nespresso machines and premium spirits. Owner's Suites feature dedicated butler service, priority reservations, and exclusive access to the Suite Lounge. All accommodations include 24-hour room service, nightly turndown service, and plush robes and slippers. Our all-veranda ship design ensures every guest enjoys private outdoor space and stunning ocean panoramas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer>
@@ -10191,6 +10440,140 @@
                 chevron.style.transform = 'rotate(180deg)';
             }
         }
+
+        // ========== EXPLORE SHIP & CABINS SECTION FUNCTIONALITY ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab Switching Functionality
+            const exploreTabs = document.querySelectorAll('.explore-tab');
+            const exploreContents = document.querySelectorAll('.explore-content');
+
+            exploreTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const category = tab.getAttribute('data-category');
+
+                    // Update tab buttons
+                    exploreTabs.forEach(t => {
+                        if (t === tab) {
+                            t.style.background = 'linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%)';
+                            t.style.color = 'white';
+                            t.style.border = 'none';
+                            t.style.boxShadow = '0 4px 16px rgba(212, 165, 116, 0.3)';
+                            t.classList.add('active');
+                        } else {
+                            t.style.background = 'transparent';
+                            t.style.color = 'var(--navy)';
+                            t.style.border = '2px solid rgba(212, 165, 116, 0.3)';
+                            t.style.boxShadow = 'none';
+                            t.classList.remove('active');
+                        }
+                    });
+
+                    // Update content visibility
+                    exploreContents.forEach(content => {
+                        if (content.getAttribute('data-content') === category) {
+                            content.style.display = 'block';
+                            content.classList.add('active');
+                            // Fade in animation
+                            content.style.opacity = '0';
+                            setTimeout(() => {
+                                content.style.transition = 'opacity 0.5s ease';
+                                content.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            content.style.display = 'none';
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Carousel Navigation Functionality
+            const carouselData = {};
+
+            // Initialize all carousels
+            document.querySelectorAll('.carousel-track').forEach(track => {
+                const carouselId = track.getAttribute('data-carousel');
+                carouselData[carouselId] = {
+                    currentIndex: 0,
+                    totalSlides: track.querySelectorAll('.carousel-slide').length
+                };
+            });
+
+            // Previous button functionality
+            document.querySelectorAll('.carousel-prev').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const carouselId = btn.getAttribute('data-carousel');
+                    const track = document.querySelector(`.carousel-track[data-carousel="${carouselId}"]`);
+                    const data = carouselData[carouselId];
+
+                    if (data.currentIndex > 0) {
+                        data.currentIndex--;
+                    } else {
+                        data.currentIndex = data.totalSlides - 1;
+                    }
+
+                    const offset = -100 * data.currentIndex;
+                    track.style.transform = `translateX(${offset}%)`;
+                });
+
+                // Hover effects
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'translateY(-50%) scale(1.1)';
+                    btn.style.boxShadow = '0 6px 24px rgba(0, 0, 0, 0.3)';
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translateY(-50%) scale(1)';
+                    btn.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                });
+            });
+
+            // Next button functionality
+            document.querySelectorAll('.carousel-next').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const carouselId = btn.getAttribute('data-carousel');
+                    const track = document.querySelector(`.carousel-track[data-carousel="${carouselId}"]`);
+                    const data = carouselData[carouselId];
+
+                    if (data.currentIndex < data.totalSlides - 1) {
+                        data.currentIndex++;
+                    } else {
+                        data.currentIndex = 0;
+                    }
+
+                    const offset = -100 * data.currentIndex;
+                    track.style.transform = `translateX(${offset}%)`;
+                });
+
+                // Hover effects
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'translateY(-50%) scale(1.1)';
+                    btn.style.boxShadow = '0 6px 24px rgba(0, 0, 0, 0.3)';
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translateY(-50%) scale(1)';
+                    btn.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                });
+            });
+
+            // Tab button hover effects
+            exploreTabs.forEach(tab => {
+                tab.addEventListener('mouseenter', () => {
+                    if (!tab.classList.contains('active')) {
+                        tab.style.borderColor = 'var(--gold)';
+                        tab.style.color = 'var(--gold)';
+                    }
+                });
+
+                tab.addEventListener('mouseleave', () => {
+                    if (!tab.classList.contains('active')) {
+                        tab.style.borderColor = 'rgba(212, 165, 116, 0.3)';
+                        tab.style.color = 'var(--navy)';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
