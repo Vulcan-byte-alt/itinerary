@@ -7728,8 +7728,24 @@
                 display: flex !important;
                 flex-direction: column !important;
                 border-radius: 16px !important;
-                overflow: hidden !important;
+                overflow: visible !important;
                 box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+                pointer-events: auto !important;
+            }
+
+            /* Disable hover effects on mobile */
+            .deal-card:hover {
+                transform: none !important;
+            }
+
+            /* Hide expand-on-hover sections on mobile */
+            .deal-card .expand-on-hover,
+            .expand-on-hover {
+                display: none !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                grid-template-rows: 0fr !important;
             }
 
             /* Card Image Container - Full Width on Mobile */
@@ -7738,8 +7754,9 @@
                 width: 100% !important;
                 min-width: 100% !important;
                 max-width: 100% !important;
-                height: 280px !important;
-                min-height: 280px !important;
+                height: 350px !important;
+                min-height: 350px !important;
+                max-height: 350px !important;
                 border-radius: 0 !important;
             }
 
@@ -7783,6 +7800,11 @@
             .deal-card > div:last-child,
             [style*="padding: 42px 48px"] {
                 padding: 24px 20px !important;
+                overflow: visible !important;
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                height: auto !important;
             }
 
             /* Decorative Frames - Adjusted for Mobile */
@@ -8162,6 +8184,43 @@
 
         .mobile-filter-toggle:not(.active) svg:last-child {
             transform: rotate(180deg) !important;
+        }
+    </style>
+
+    <!-- CRITICAL: Immediate Mobile Fix - Prevents Elongation -->
+    <style>
+        @media (max-width: 768px) {
+            /* Force expand-on-hover sections to NEVER show on mobile - runs immediately */
+            .expand-on-hover,
+            .deal-card .expand-on-hover,
+            article .expand-on-hover,
+            article[data-deal-id] .expand-on-hover {
+                display: none !important;
+                grid-template-rows: 0fr !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Lock image container height to prevent growth after load */
+            .deal-card > div:first-child,
+            article[data-deal-id] > div:first-child {
+                height: 350px !important;
+                min-height: 350px !important;
+                max-height: 350px !important;
+            }
+
+            /* Disable ALL transitions on mobile to prevent animation artifacts */
+            .deal-card,
+            .deal-card *,
+            article[data-deal-id],
+            article[data-deal-id] * {
+                transition: none !important;
+            }
         }
     </style>
 </head>
@@ -18113,6 +18172,36 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
                 });
             }
         });
+    </script>
+
+    <!-- Fix Mobile Deal Cards - Remove Hover Events (Runs Once Immediately) -->
+    <script>
+        // MOBILE ONLY: Disable all hover effects
+        if (window.innerWidth <= 768) {
+            // Function to fix deal cards
+            function fixMobileDealCards() {
+                const dealCards = document.querySelectorAll('.deal-card, article.deal-card, article[data-deal-id]');
+
+                dealCards.forEach((card) => {
+                    // REMOVE inline event handlers that trigger on touch
+                    card.onmouseover = null;
+                    card.onmouseout = null;
+                    card.removeAttribute('onmouseover');
+                    card.removeAttribute('onmouseout');
+
+                    // Override inline overflow style
+                    card.style.setProperty('overflow', 'visible', 'important');
+                });
+            }
+
+            // Run immediately - CSS already handles visibility, this just removes events
+            fixMobileDealCards();
+
+            // Also run once after DOM loads (for any late-loaded cards)
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', fixMobileDealCards);
+            }
+        }
     </script>
 </body>
 
