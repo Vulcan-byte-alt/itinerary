@@ -7728,8 +7728,24 @@
                 display: flex !important;
                 flex-direction: column !important;
                 border-radius: 16px !important;
-                overflow: hidden !important;
+                overflow: visible !important;
                 box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+                pointer-events: auto !important;
+            }
+
+            /* Disable hover effects on mobile */
+            .deal-card:hover {
+                transform: none !important;
+            }
+
+            /* Hide expand-on-hover sections on mobile */
+            .deal-card .expand-on-hover,
+            .expand-on-hover {
+                display: none !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                grid-template-rows: 0fr !important;
             }
 
             /* Card Image Container - Full Width on Mobile */
@@ -7783,6 +7799,11 @@
             .deal-card > div:last-child,
             [style*="padding: 42px 48px"] {
                 padding: 24px 20px !important;
+                overflow: visible !important;
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                height: auto !important;
             }
 
             /* Decorative Frames - Adjusted for Mobile */
