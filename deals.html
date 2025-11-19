@@ -8045,7 +8045,7 @@
             /* Pagination Container - Mobile Optimized */
             .pagination-container {
                 margin-top: 16px !important;
-                margin-bottom: 8px !important;
+                margin-bottom: 4px !important;
                 padding: 0 20px !important;
                 display: flex !important;
                 justify-content: center !important;
@@ -8077,12 +8077,12 @@
                 height: 0 !important;
             }
 
-            /* Deal cards container - set fixed height for perfect spacing on mobile */
+            /* Deal cards container - auto height to prevent separate scrolling on mobile */
             #dealsContainer,
             #dealsContainer.list-view,
             #dealsContainer.grid-view {
-                height: 11200px !important;
-                max-height: 11200px !important;
+                height: auto !important;
+                max-height: none !important;
                 overflow: visible !important;
                 margin-top: 20px !important;
                 margin-bottom: 0 !important;
@@ -8122,7 +8122,7 @@
 
             /* Popular Destinations Section - Mobile Spacing */
             section[style*="padding: 80px 0"] {
-                padding: 16px 0 !important;
+                padding: 8px 0 !important;
             }
 
             /* Popular Destinations Header - Center on Mobile */
