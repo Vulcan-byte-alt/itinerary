@@ -8044,7 +8044,7 @@
 
             /* Pagination Container - Mobile Optimized */
             .pagination-container {
-                margin-top: 8px !important;
+                margin-top: 12px !important;
                 margin-bottom: 4px !important;
                 padding: 0 20px !important;
                 display: flex !important;
@@ -8088,9 +8088,16 @@
                 margin-bottom: 0 !important;
                 padding-top: 0 !important;
                 padding-bottom: 0 !important;
+                gap: 20px !important;
             }
 
-            /* Last visible deal card - reduce bottom margin */
+            /* Deal cards - remove all margins on mobile */
+            article[data-deal-id],
+            .deal-card {
+                margin: 0 !important;
+            }
+
+            /* Last visible deal card - ensure no bottom margin */
             article[data-deal-id][data-pagination-visible="true"]:last-of-type,
             .deal-card[data-pagination-visible="true"]:last-of-type {
                 margin-bottom: 0 !important;
