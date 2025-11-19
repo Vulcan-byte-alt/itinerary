@@ -8185,6 +8185,35 @@
             transform: rotate(180deg) !important;
         }
     </style>
+
+    <!-- CRITICAL: Immediate Mobile Fix - Prevents Elongation -->
+    <style>
+        @media (max-width: 768px) {
+            /* Force expand-on-hover sections to NEVER show on mobile - runs immediately */
+            .expand-on-hover,
+            .deal-card .expand-on-hover,
+            article .expand-on-hover,
+            article[data-deal-id] .expand-on-hover {
+                display: none !important;
+                grid-template-rows: 0fr !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Disable ALL transitions on mobile to prevent animation artifacts */
+            .deal-card,
+            .deal-card *,
+            article[data-deal-id],
+            article[data-deal-id] * {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18136,72 +18165,33 @@ background-position: right 16px center;" onfocus="this.style.borderColor='var(--
         });
     </script>
 
-    <!-- Fix Mobile Deal Cards - Remove Hover Events & Force Visibility -->
+    <!-- Fix Mobile Deal Cards - Remove Hover Events (Runs Once Immediately) -->
     <script>
-        // MOBILE ONLY: Disable all hover effects and fix visibility
+        // MOBILE ONLY: Disable all hover effects
         if (window.innerWidth <= 768) {
-            console.log('🔧 Mobile detected - Fixing deal cards...');
-
             // Function to fix deal cards
             function fixMobileDealCards() {
                 const dealCards = document.querySelectorAll('.deal-card, article.deal-card, article[data-deal-id]');
-                console.log(`📱 Found ${dealCards.length} deal cards to fix`);
 
-                dealCards.forEach((card, index) => {
-                    // 1. REMOVE inline event handlers completely
+                dealCards.forEach((card) => {
+                    // REMOVE inline event handlers that trigger on touch
                     card.onmouseover = null;
                     card.onmouseout = null;
                     card.removeAttribute('onmouseover');
                     card.removeAttribute('onmouseout');
 
-                    // 2. Override inline style overflow to visible
+                    // Override inline overflow style
                     card.style.setProperty('overflow', 'visible', 'important');
-                    card.style.setProperty('display', 'flex', 'important');
-                    card.style.setProperty('flex-direction', 'column', 'important');
-
-                    // 3. Hide ALL expand-on-hover sections permanently
-                    const expandSections = card.querySelectorAll('.expand-on-hover');
-                    expandSections.forEach(section => {
-                        section.style.setProperty('display', 'none', 'important');
-                        section.style.setProperty('grid-template-rows', '0fr', 'important');
-                        section.style.setProperty('opacity', '0', 'important');
-                        section.style.setProperty('height', '0', 'important');
-                        section.style.setProperty('overflow', 'hidden', 'important');
-                        section.style.setProperty('visibility', 'hidden', 'important');
-                    });
-
-                    // 4. Force content section (div:last-child) to be visible
-                    const contentSection = card.querySelector(':scope > div:last-child');
-                    if (contentSection) {
-                        contentSection.style.setProperty('display', 'block', 'important');
-                        contentSection.style.setProperty('opacity', '1', 'important');
-                        contentSection.style.setProperty('visibility', 'visible', 'important');
-                        contentSection.style.setProperty('overflow', 'visible', 'important');
-                        contentSection.style.setProperty('height', 'auto', 'important');
-                        contentSection.style.setProperty('max-height', 'none', 'important');
-                    }
-
-                    // 5. Disable any pointer events that might trigger hover
-                    card.style.setProperty('pointer-events', 'auto', 'important');
-
-                    console.log(`✅ Card ${index + 1} fixed`);
                 });
             }
 
-            // Run immediately
+            // Run immediately - CSS already handles visibility, this just removes events
             fixMobileDealCards();
 
-            // Run after DOM is fully loaded
+            // Also run once after DOM loads (for any late-loaded cards)
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', fixMobileDealCards);
             }
-
-            // Also run after a short delay to catch any dynamically loaded cards
-            setTimeout(fixMobileDealCards, 100);
-            setTimeout(fixMobileDealCards, 500);
-            setTimeout(fixMobileDealCards, 1000);
-
-            console.log('✅ Mobile deal card fix applied');
         }
     </script>
 </body>
