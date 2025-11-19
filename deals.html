@@ -7754,8 +7754,9 @@
                 width: 100% !important;
                 min-width: 100% !important;
                 max-width: 100% !important;
-                height: 280px !important;
-                min-height: 280px !important;
+                height: 350px !important;
+                min-height: 350px !important;
+                max-height: 350px !important;
                 border-radius: 0 !important;
             }
 
@@ -8203,6 +8204,14 @@
                 visibility: hidden !important;
                 margin: 0 !important;
                 padding: 0 !important;
+            }
+
+            /* Lock image container height to prevent growth after load */
+            .deal-card > div:first-child,
+            article[data-deal-id] > div:first-child {
+                height: 350px !important;
+                min-height: 350px !important;
+                max-height: 350px !important;
             }
 
             /* Disable ALL transitions on mobile to prevent animation artifacts */
